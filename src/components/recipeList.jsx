@@ -9,9 +9,14 @@ useEffect(async () => {
   try{
     setLoading(true); // Start loading
     setError(null); // Reset error before fetching
-    
+
     // Making the API call
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+
+    // If response is successful, parse the data as JSON
+    const data = await response.json();
+    console.log(data);
+
 
 
     setLoading(false); // Stop loading
