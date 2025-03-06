@@ -22,7 +22,8 @@ const RecipeList = () => {
         console.log(data);
 
         if (data.meals) {
-        }
+          setRecipes(data.meals);
+        } else setRecipes([]);
         setLoading(false); // Stop loading
       } catch (error) {
         setError('Failed to fetch recipes.');
