@@ -3,7 +3,7 @@ import './recipeCard.css';
 const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState(null);
 
   useEffect(() => {
     const fetchRecipeDetail = async () => {
@@ -18,7 +18,7 @@ const RecipeCard = ({ recepie }) => {
 
         if (data.meals) {
           setDetail(data.meals[0]);
-        } else setDetail([]);
+        } else setDetail(null);
         setLoading(false);
       } catch (error) {
         setError(error);
