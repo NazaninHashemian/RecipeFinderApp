@@ -1,5 +1,6 @@
 // src/components/RecipeList.jsx
 import React, { useState, useEffect } from 'react';
+import RecipeCard from './RecipeCard';
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]); //State to store the filtered recipes
   const [ingredient, setIngredient] = useState('chicken_breast');
@@ -20,7 +21,7 @@ const RecipeList = () => {
 
         // If response is successful, parse the data as JSON
         const data = await response.json();
-        console.log(data);
+        console.log(data.meals);
 
         if (data.meals) {
           setRecipes(data.meals);
@@ -45,6 +46,9 @@ const RecipeList = () => {
         onChange={(e) => setIngredient(e.target.value)}
         placeholder="Enter Ingredient"
       />
+      {recipes.map((recipe) => {
+        <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+      })}
     </div>
   );
 };
