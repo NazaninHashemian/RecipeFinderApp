@@ -36,6 +36,11 @@ const RecipeCard = ({ recepie }) => {
         src={recepie.strMealThumb}
         alt={recepie.strMeal}
       />
+      {/* Show loading and error messages here */}
+      {loading && <p>Loading recipe details...</p>}
+      {error && <p>{error}</p>}
+
+      {/* Display recipe instructions */}
       {detail ? (
         <p>{detail.strInstructions}</p>
       ) : (

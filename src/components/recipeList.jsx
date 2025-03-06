@@ -48,11 +48,17 @@ const RecipeList = () => {
       />
       {loading && <p>Loading....</p>}
       {error && <p>{error}</p>}
-      {recipes.map((recipe) => {
-        return (
-          <RecipeCard key={recipe.idMeal} width="100px" recepie={recipe} />
-        );
-      })}
+
+      {/* Display recipes */}
+      <div className="recipe-list">
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => {
+            return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+          })
+        ) : (
+          <p>No recipes found</p>
+        )}
+      </div>
     </div>
   );
 };
