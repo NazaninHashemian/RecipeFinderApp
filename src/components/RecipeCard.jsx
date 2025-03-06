@@ -1,8 +1,13 @@
+import './recipeCard.css';
 const RecipeCard = ({ recepie }) => {
   return (
     <>
-      <h1>{recepie.strMeals}</h1>
-      <img src={recepie.strMealThumb} alt={recepie.strMeals} />
+      <h1>{recepie.strMeal}</h1>
+      <img
+        className="recipe-image"
+        src={recepie.strMealThumb}
+        alt={recepie.strMeals}
+      />
     </>
   );
 };

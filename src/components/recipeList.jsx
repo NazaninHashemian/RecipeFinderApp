@@ -47,7 +47,9 @@ const RecipeList = () => {
         placeholder="Enter Ingredient"
       />
       {recipes.map((recipe) => {
-        <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+        return (
+          <RecipeCard key={recipe.idMeal} width="100px" recepie={recipe} />
+        );
       })}
     </div>
   );
