@@ -21,7 +21,7 @@ const RecipeList = () => {
 
         // If response is successful, parse the data as JSON
         const data = await response.json();
-        console.log(data.meals);
+        // console.log(data.meals);
 
         if (data.meals) {
           setRecipes(data.meals);

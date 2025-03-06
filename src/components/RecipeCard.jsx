@@ -1,15 +1,33 @@
+import { useEffect, useState } from 'react';
 import './recipeCard.css';
 const RecipeCard = ({ recepie }) => {
-  const fetchRecipeDetail = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [detail, setDetail] = useState([]);
 
+  useEffect(() => {
+    const fetchRecipeDetail = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
+        const response = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recepie.idMeal}`
+        );
+        const data = await response.json();
 
-      
-    } catch (error) {}
-  };
+        if (data.meals) {
+          setDetail(data.meals[0]);
+        } else setDetail([]);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchRecipeDetail();
+  }, [recepie.idMeal]);
   return (
     <>
       <h2>{recepie.strMeal}</h2>
@@ -18,6 +36,7 @@ const RecipeCard = ({ recepie }) => {
         src={recepie.strMealThumb}
         alt={recepie.strMeals}
       />
+      <p>{detail.strInstructions}</p>
     </>
   );
 };
