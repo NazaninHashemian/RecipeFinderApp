@@ -29,13 +29,16 @@ const RecipeCard = ({ recepie }) => {
     fetchRecipeDetail();
   }, [recepie.idMeal]);
   return (
-    <>
-      <h2>{recepie.strMeal}</h2>
-      <img
-        className="recipe-image"
-        src={recepie.strMealThumb}
-        alt={recepie.strMeal}
-      />
+    <div className="recipe-card">
+      <h2 className="recipe-title">{recepie.strMeal}</h2>
+      <div className="clearfix">
+        <img
+          className="recipe-image"
+          src={recepie.strMealThumb}
+          alt={recepie.strMeal}
+        />
+      </div>
+      <div className="recipe-instructions">
       {/* Show loading and error messages here */}
       {loading && <p>Loading recipe details...</p>}
       {error && <p>{error}</p>}
@@ -46,7 +49,8 @@ const RecipeCard = ({ recepie }) => {
       ) : (
         <p>Instructions not available.</p>
       )}
-    </>
+      </div>
+    </div>
   );
 };
 
