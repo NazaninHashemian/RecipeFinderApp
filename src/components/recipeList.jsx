@@ -46,6 +46,8 @@ const RecipeList = () => {
         onChange={(e) => setIngredient(e.target.value)}
         placeholder="Enter Ingredient"
       />
+      {loading && <p>Loading....</p>}
+      {error && <p>{error}</p>}
       {recipes.map((recipe) => {
         return (
           <RecipeCard key={recipe.idMeal} width="100px" recepie={recipe} />
