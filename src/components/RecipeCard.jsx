@@ -34,9 +34,13 @@ const RecipeCard = ({ recepie }) => {
       <img
         className="recipe-image"
         src={recepie.strMealThumb}
-        alt={recepie.strMeals}
+        alt={recepie.strMeal}
       />
-      <p>{detail.strInstructions}</p>
+      {detail ? (
+        <p>{detail.strInstructions}</p>
+      ) : (
+        <p>Instructions not available.</p>
+      )}
     </>
   );
 };
