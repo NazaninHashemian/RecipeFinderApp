@@ -7,6 +7,7 @@ const RecipeList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    //Define asynic funtion to fetch recipes
     const fetchData = async () => {
       try {
         setLoading(true); // Start loading
@@ -24,15 +25,28 @@ const RecipeList = () => {
         if (data.meals) {
           setRecipes(data.meals);
         } else setRecipes([]);
+
         setLoading(false); // Stop loading
       } catch (error) {
         setError('Failed to fetch recipes.');
         setLoading(false); // Stop loading even if an error occurs
       }
     };
+
+    fetchData();
   }, [ingredient]);
 
-  return <></>;
+  return (
+    <div>
+      <h1>Recipe with {ingredient}</h1>
+      <input
+        type="text"
+        value={ingredient}
+        onChange={(e) => setIngredient(e.target.value)}
+        placeholder="Enter Ingredient"
+      />
+    </div>
+  );
 };
 
 export default RecipeList;
