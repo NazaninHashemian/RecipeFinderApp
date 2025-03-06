@@ -8,6 +8,13 @@ const RecipeList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!ingredient.trim()) {
+      setError('Please enter an ingredient.');
+      setLoading(false);
+      setRecipes([]);
+      return;
+    }
+
     //Define asynic funtion to fetch recipes
     const fetchData = async () => {
       try {
