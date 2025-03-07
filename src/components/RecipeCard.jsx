@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import './recipeCard.css';
+
 const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [detail, setDetail] = useState(null);
+  const [showFullInstructions, setShowFullInstructions] = useState(false);
 
   useEffect(() => {
     const fetchRecipeDetail = async () => {
@@ -28,27 +30,58 @@ const RecipeCard = ({ recepie }) => {
 
     fetchRecipeDetail();
   }, [recepie.idMeal]);
+
+  const handleToggleInstructions = () => {
+    setShowFullInstructions((prevState) => !prevState);
+  };
+
   return (
     <div className="recipe-card">
       <h2 className="recipe-title">{recepie.strMeal}</h2>
-      <div className="clearfix">
+      <div className="recipe-content">
         <img
           className="recipe-image"
           src={recepie.strMealThumb}
           alt={recepie.strMeal}
         />
-      </div>
-      <div className="recipe-instructions">
-      {/* Show loading and error messages here */}
-      {loading && <p>Loading recipe details...</p>}
-      {error && <p>{error}</p>}
+        <div className="recipe-instructions">
+          {/* Show loading and error messages */}
+          {loading && <p>Loading recipe details...</p>}
+          {error && <p>{error}</p>}
 
-      {/* Display recipe instructions */}
-      {detail ? (
-        <p>{detail.strInstructions}</p>
-      ) : (
-        <p>Instructions not available.</p>
-      )}
+          {/* Display recipe instructions */}
+          {detail ? (
+            <p
+              className={
+                showFullInstructions
+                  ? 'full-instructions'
+                  : 'truncated-instructions'
+              }
+            >
+              {detail.strInstructions}
+            </p>
+          ) : (
+            <p>Instructions not available.</p>
+          )}
+
+          {/* Show More / Show Less button */}
+          {detail && !showFullInstructions && (
+            <button
+              onClick={handleToggleInstructions}
+              className="show-more-btn"
+            >
+              Show More
+            </button>
+          )}
+          {showFullInstructions && (
+            <button
+              onClick={handleToggleInstructions}
+              className="show-more-btn"
+            >
+              Show Less
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
