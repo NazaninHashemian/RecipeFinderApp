@@ -37,7 +37,7 @@ const RecipeCard = ({ recepie }) => {
   //  Function to get ingredients
   const getIngredients = () => {
     let ingredients = [];
-    const maxIngredientsCount = 10;
+    const maxIngredientsCount = 8;
     for (let i = 1; i <= maxIngredientsCount; i++) {
       const ingredient = detail[`strIngredient${i}`];
       if (ingredient && ingredient.trim()) {
@@ -48,11 +48,11 @@ const RecipeCard = ({ recepie }) => {
   };
   return (
     <div className="recipe-card">
-      {/* Show loading and error messages */}
-      {loading && <p>Loading recipe details...</p>}
-      {error && <p>{error}</p>}
       <h2 className="recipe-title">{recepie.strMeal}</h2>
       <div className="recipe-content">
+        {/* Show loading and error messages */}
+        {loading && <p>Loading recipe details...</p>}
+        {error && <p>{error}</p>}
         <img
           className="recipe-image"
           src={recepie.strMealThumb}
@@ -85,13 +85,13 @@ const RecipeCard = ({ recepie }) => {
             <p>Instructions not available.</p>
           )}
 
-          {/* Show More / Show Less  */}
+          {/* Show More / Show Less button */}
           {detail && (
             <button
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              {showFullInstructions ? 'less' : 'More'}
+              {showFullInstructions ? 'Show less' : 'Show More'}
             </button>
           )}
         </div>
