@@ -37,7 +37,7 @@ const RecipeCard = ({ recepie }) => {
   //  Function to get ingredients
   const getIngredients = () => {
     let ingredients = [];
-    const maxIngredientsCount = 8;
+    const maxIngredientsCount = 10;
     for (let i = 1; i <= maxIngredientsCount; i++) {
       const ingredient = detail[`strIngredient${i}`];
       if (ingredient && ingredient.trim()) {
@@ -85,13 +85,13 @@ const RecipeCard = ({ recepie }) => {
             <p>Instructions not available.</p>
           )}
 
-          {/* Show More / Show Less button */}
+          {/* Show More / Show Less  */}
           {detail && (
             <button
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              {showFullInstructions ? 'Show less' : 'Show More'}
+              {showFullInstructions ? 'less' : 'More'}
             </button>
           )}
         </div>
