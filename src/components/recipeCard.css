@@ -1,41 +1,26 @@
 .recipe-card {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 15px;
   margin: 8px;
   display: flex;
   flex-direction: column;
   align-items: left;
-  gap: 5px;
-}
-
-.recipe-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 4px 0;
 }
 
 .recipe-content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 16px;
   width: 100%;
+  gap: 15px;
 }
 
 .recipe-image {
   max-width: 150px;
   width: 100%;
   height: auto;
-  box-sizing: border-box;
 }
 
-.recipe-instructions {
-  max-width: 100%;
-  text-align: left;
-  line-height: 1.5;
-}
-
-/* By default, show the full instructions */
 .full-instructions {
   display: block;
 }
@@ -43,26 +28,30 @@
 /* For smaller screens, truncate the instructions */
 .truncated-instructions {
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limit to 5 lines */
+  -webkit-line-clamp: 3; /* Limit to 5 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Media query for larger screens */
+/* Show full instructions on larger screens and hide the "Show More" button */
 @media (min-width: 768px) {
   .truncated-instructions {
     display: block; /* Show full instructions on larger screens */
   }
 
-  /* Hide the "Show More" button on larger screens, no need to toggle */
   .show-more-btn {
-    display: none;
+    display: none; /* Hide the "Show More" button on larger screens */
   }
 }
 
-/* Hide "Show More" button on smaller screens if full instructions are shown */
-@media (max-width: 767px) {
+/* On smaller screens, ensure the full instructions are visible */
+@media (max-width: 500px) {
+  /* Hide truncated text on small screens */
+  .truncated-instructions {
+    display: none; /* Hide truncated instructions on smaller screens */
+  }
+
   .full-instructions {
-    display: block; /* Ensure the full text is visible */
+    display: block; /* Show full instructions on smaller screens */
   }
 }

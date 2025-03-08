@@ -34,9 +34,23 @@ const RecipeCard = ({ recepie }) => {
   const handleToggleInstructions = () => {
     setShowFullInstructions((prevState) => !prevState);
   };
-
+  //  Function to get ingredients
+  const getIngredients = () => {
+    let ingredients = [];
+    const maxIngredientsCount = 8;
+    for (let i = 1; i <= maxIngredientsCount; i++) {
+      const ingredient = detail[`strIngredient${i}`];
+      if (ingredient && ingredient.trim()) {
+        ingredients.push(`${ingredient}`);
+      }
+    }
+    return ingredients.join(', ');
+  };
   return (
     <div className="recipe-card">
+      {/* Show loading and error messages */}
+      {loading && <p>Loading recipe details...</p>}
+      {error && <p>{error}</p>}
       <h2 className="recipe-title">{recepie.strMeal}</h2>
       <div className="recipe-content">
         <img
@@ -44,10 +58,17 @@ const RecipeCard = ({ recepie }) => {
           src={recepie.strMealThumb}
           alt={recepie.strMeal}
         />
+
         <div className="recipe-instructions">
-          {/* Show loading and error messages */}
-          {loading && <p>Loading recipe details...</p>}
-          {error && <p>{error}</p>}
+          {/* Display ingredients section */}
+          <div className="ingredients">
+            {/* <h3>Ingredients:</h3> */}
+            <p className="ingredients-list">
+              {detail && getIngredients()
+                ? getIngredients()
+                : 'No ingredients available.'}
+            </p>
+          </div>
 
           {/* Display recipe instructions */}
           {detail ? (
@@ -58,7 +79,7 @@ const RecipeCard = ({ recepie }) => {
                   : 'truncated-instructions'
               }
             >
-              {detail.strInstructions}
+              {`${detail.strInstructions}`}
             </p>
           ) : (
             <p>Instructions not available.</p>
@@ -70,7 +91,7 @@ const RecipeCard = ({ recepie }) => {
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              {showFullInstructions ? 'Show Less' : 'Show More'}
+              {showFullInstructions ? 'Show less' : 'Show More'}
             </button>
           )}
         </div>

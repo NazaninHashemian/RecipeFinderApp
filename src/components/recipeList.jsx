@@ -45,6 +45,7 @@ const RecipeList = () => {
 
     fetchData();
   }, [ingredient]);
+
   const handleClearSearch = () => {
     setIngredient('');
     setRecipes([]);
