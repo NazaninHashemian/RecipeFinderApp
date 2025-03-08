@@ -70,7 +70,7 @@ const RecipeCard = ({ recepie }) => {
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              {showFullInstructions ? 'Show More' : 'Show Less'}
+              {showFullInstructions ? 'Show Less' : 'Show More'}
             </button>
           )}
         </div>
