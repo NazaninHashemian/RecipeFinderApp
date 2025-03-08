@@ -1,6 +1,8 @@
 // src/components/RecipeList.jsx
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
+import './recipeList.css';
+
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]); //State to store the filtered recipes
   const [ingredient, setIngredient] = useState('chicken_breast');
@@ -43,16 +45,25 @@ const RecipeList = () => {
 
     fetchData();
   }, [ingredient]);
-
+  const handleClearSearch = () => {
+    setIngredient('');
+    setRecipes([]);
+    setError(null);
+  };
   return (
     <div>
       <h1>Recipe with {ingredient}</h1>
-      <input
-        type="text"
-        value={ingredient}
-        onChange={(e) => setIngredient(e.target.value)}
-        placeholder="Enter Ingredient"
-      />
+      <div className="search-container">
+        <input
+          type="text"
+          value={ingredient}
+          onChange={(e) => setIngredient(e.target.value)}
+          placeholder="Enter Ingredient"
+        />
+        <button onClick={handleClearSearch} className="clear-btn">
+          Clear
+        </button>
+      </div>
       {loading && <p>Loading....</p>}
       {error && <p>{error}</p>}
 
