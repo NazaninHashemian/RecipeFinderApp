@@ -60,6 +60,7 @@ const RecipeList = () => {
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
           placeholder="Enter Ingredient"
+          className="ingredient-input"
         />
         <button onClick={handleClearSearch} className="clear-btn">
           Clear
