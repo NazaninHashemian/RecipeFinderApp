@@ -53,7 +53,7 @@ const RecipeList = () => {
   };
   return (
     <div>
-      <h1 id="main-heading">Recipe with {ingredient}</h1>
+      <h1 id="main-heading">Recipe with {ingredient || 'No ingredient'}</h1>
       <div className="search-container">
         <input
           type="text"

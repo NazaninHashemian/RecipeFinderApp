@@ -1,3 +1,4 @@
+//src/components/RecipeCard.jsx
 import { useEffect, useState } from 'react';
 import './recipeCard.css';
 
@@ -91,7 +92,7 @@ const RecipeCard = ({ recepie }) => {
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              {showFullInstructions ? 'Show less' : 'Show More'}
+              {showFullInstructions ? 'less' : 'More'}
             </button>
           )}
         </div>
