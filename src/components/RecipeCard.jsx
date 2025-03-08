@@ -65,20 +65,12 @@ const RecipeCard = ({ recepie }) => {
           )}
 
           {/* Show More / Show Less button */}
-          {detail && !showFullInstructions && (
+          {detail && (
             <button
               onClick={handleToggleInstructions}
               className="show-more-btn"
             >
-              Show More
-            </button>
-          )}
-          {showFullInstructions && (
-            <button
-              onClick={handleToggleInstructions}
-              className="show-more-btn"
-            >
-              Show Less
+              {showFullInstructions ? 'Show More' : 'Show Less'}
             </button>
           )}
         </div>
