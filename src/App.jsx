@@ -1,4 +1,3 @@
-import './App.css';
 import RecipeList from './components/RecipeList';
 
 function App() {
