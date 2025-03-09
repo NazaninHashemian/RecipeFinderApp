@@ -8,9 +8,7 @@
   align-items: left;
   background: #fff;
 }
-/* #main-heading {
-  text-align: center;
-} */
+
 .recipe-content {
   display: flex;
   justify-content: space-evenly;
@@ -18,7 +16,9 @@
   width: 100%;
   gap: 15px;
 }
-
+.recipe-error-loading {
+  padding-left: 10px;
+}
 .recipe-image {
   max-width: 150px;
   width: 100%;

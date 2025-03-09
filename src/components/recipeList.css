@@ -1,5 +1,10 @@
 /* recipeList.css */
+#main-heading {
+  /* text-align: left; */
+  padding-left: 10px;
+}
 .search-container {
+  padding-left: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -7,6 +12,9 @@
   margin-bottom: 20px;
   width: 100%;
   max-width: 600px;
+}
+.load-error {
+  padding-left: 10px;
 }
 
 .ingredient-input {
@@ -37,7 +45,3 @@
   flex-direction: column;
   gap: 15px;
 }
-/* 
-#main-heading {
-  text-align: center;
-} */

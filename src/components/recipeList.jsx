@@ -69,18 +69,12 @@ const RecipeList = () => {
           Clear
         </button>
       </div>
-      {loading && <p>Loading....</p>}
-      {/* Display a skeleton loader while loading */}
-      {/* {loading && (
-        <div className="skeleton-loader">
-          <div className="skeleton-item"></div>
-          <div className="skeleton-item"></div>
-          <div className="skeleton-item"></div>
-        </div>
-      )} */}
-
-      {error && <p>{error}</p>}
-
+      <div className="load-error">
+        {loading && (
+          <p style={{ color: 'blue' }}>Loading based on main ingredient ....</p>
+        )}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+      </div>
       {/* Display recipes */}
       <div className="recipe-list">
         {recipes.length > 0 ? (
@@ -88,7 +82,7 @@ const RecipeList = () => {
             return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
           })
         ) : (
-          <p>No recipes found</p>
+          <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
       </div>
     </div>

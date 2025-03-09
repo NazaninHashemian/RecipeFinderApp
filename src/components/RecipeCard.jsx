@@ -7,6 +7,7 @@ const RecipeCard = ({ recepie }) => {
   const [error, setError] = useState(null);
   const [detail, setDetail] = useState(null);
   const [showFullInstructions, setShowFullInstructions] = useState(false);
+  const [showFullIngredients, setShowFullIngredients] = useState(false);
 
   useEffect(() => {
     const fetchRecipeDetail = async () => {
@@ -35,10 +36,14 @@ const RecipeCard = ({ recepie }) => {
   const handleToggleInstructions = () => {
     setShowFullInstructions((prevState) => !prevState);
   };
+  const handleToggleIngredients = () => {
+    setShowFullIngredients((prevState) => !prevState);
+  };
+
   //  Function to get ingredients
   const getIngredients = () => {
     let ingredients = [];
-    const maxIngredientsCount = 8;
+    const maxIngredientsCount = 20;
     for (let i = 1; i <= maxIngredientsCount; i++) {
       const ingredient = detail[`strIngredient${i}`];
       if (ingredient && ingredient.trim()) {
@@ -47,57 +52,72 @@ const RecipeCard = ({ recepie }) => {
     }
     return ingredients.join(', ');
   };
+  //  Function to get ingredients
+  const getArea = () => {
+    const area = detail[`strArea`];
+    return area;
+  };
   return (
-    <div className="recipe-card">
-      <h2 className="recipe-title">{recepie.strMeal}</h2>
-      <div className="recipe-content">
+    <>
+      <div className="recipe-error-loading">
         {/* Show loading and error messages */}
-        {loading && <p>Loading recipe details...</p>}
-        {error && <p>{error}</p>}
-        <img
-          className="recipe-image"
-          src={recepie.strMealThumb}
-          alt={recepie.strMeal}
-        />
+        {loading && <p style={{ color: 'blue' }}>Loading recipe details...</p>}
+        {error && <p style={{ color: 'orange' }}>{error}</p>}
+      </div>
+      <div className="recipe-card">
+        <h2 className="recipe-title">{recepie.strMeal}</h2>
+        <div className="recipe-content">
+          <img
+            className="recipe-image"
+            src={recepie.strMealThumb}
+            alt={recepie.strMeal}
+          />
 
-        <div className="recipe-instructions">
-          {/* Display ingredients section */}
-          <div className="ingredients">
-            {/* <h3>Ingredients:</h3> */}
-            <p className="ingredients-list">
-              {detail && getIngredients()
-                ? getIngredients()
-                : 'No ingredients available.'}
-            </p>
+          <div className="recipe-instructions">
+            {/* Display Area section */}
+            <div className="area">
+              <p className="">
+                {detail && getArea() ? getArea() : 'Area not available.'}
+              </p>
+            </div>
+
+            <div className="ingredients">
+              {/* <h3>Ingredients:</h3> */}
+              <p className="ingredients-list">
+                {detail && getIngredients()
+                  ? getIngredients()
+                  : 'No ingredients available.'}
+              </p>
+            </div>
+
+            {/* Display recipe instructions */}
+            {detail ? (
+              <p
+                className={
+                  showFullInstructions
+                    ? 'full-instructions'
+                    : 'truncated-instructions'
+                }
+              >
+                {`${detail.strInstructions}`}
+              </p>
+            ) : (
+              <p>Instructions not available.</p>
+            )}
+
+            {/* Show More / Show Less button */}
+            {detail && (
+              <button
+                onClick={handleToggleInstructions}
+                className="show-more-btn"
+              >
+                {showFullInstructions ? 'less' : 'Show More'}
+              </button>
+            )}
           </div>
-
-          {/* Display recipe instructions */}
-          {detail ? (
-            <p
-              className={
-                showFullInstructions
-                  ? 'full-instructions'
-                  : 'truncated-instructions'
-              }
-            >
-              {`${detail.strInstructions}`}
-            </p>
-          ) : (
-            <p>Instructions not available.</p>
-          )}
-
-          {/* Show More / Show Less button */}
-          {detail && (
-            <button
-              onClick={handleToggleInstructions}
-              className="show-more-btn"
-            >
-              {showFullInstructions ? 'less' : 'Show More'}
-            </button>
-          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

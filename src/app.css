@@ -5,12 +5,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* More specific wrapper styles */
-.app-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
