@@ -8,9 +8,9 @@
   align-items: left;
   background: #fff;
 }
-#main-heading {
+/* #main-heading {
   text-align: center;
-}
+} */
 .recipe-content {
   display: flex;
   justify-content: space-evenly;
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 .show-more-btn:hover {
-  color: #66f;
+  color: #33f;
 }
 
 /* Show full instructions on larger screens and hide the "Show More" button */

@@ -34,7 +34,10 @@ const RecipeList = () => {
 
         if (data.meals) {
           setRecipes(data.meals);
-        } else setRecipes([]);
+        } else {
+          setRecipes([]);
+          setLoading(false);
+        }
 
         setLoading(false); // Stop loading
       } catch (error) {
@@ -67,6 +70,15 @@ const RecipeList = () => {
         </button>
       </div>
       {loading && <p>Loading....</p>}
+      {/* Display a skeleton loader while loading */}
+      {/* {loading && (
+        <div className="skeleton-loader">
+          <div className="skeleton-item"></div>
+          <div className="skeleton-item"></div>
+          <div className="skeleton-item"></div>
+        </div>
+      )} */}
+
       {error && <p>{error}</p>}
 
       {/* Display recipes */}
