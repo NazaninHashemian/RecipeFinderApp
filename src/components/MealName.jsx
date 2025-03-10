@@ -5,11 +5,11 @@ import './recipeList.css';
 const RecipeList = () => {
   // Set default meal name to "Battenberg Cake"
   const [mealName, setMealName] = useState('Battenberg Cake');
-  const [recipe, setRecipe] = useState({});
+  const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch recipe by meal name
+  // Fetch recipes by meal name
   useEffect(() => {
     if (!mealName.trim()) return; // Skip if no meal name is provided
 
@@ -25,9 +25,9 @@ const RecipeList = () => {
         const data = await response.json();
 
         if (data.meals) {
-          setRecipe(data.meals[0]); // Set the recipe based on meal name
+          setRecipes(data.meals); // Set the recipes based on meal name
         } else {
-          setRecipe({}); // If no meals found, set an empty array
+          setRecipes([]); // If no meals found, set an empty array
         }
 
         setLoading(false);
@@ -42,7 +42,7 @@ const RecipeList = () => {
 
   const handleClearSearch = () => {
     setMealName(''); // Clear the meal name input
-    setRecipe({});
+    setRecipes([]);
     setError(null);
   };
 
@@ -62,23 +62,23 @@ const RecipeList = () => {
         </button>
       </div>
       <div className="load-error">
-        {loading && <p style={{ color: 'blue' }}>Loading recipe...</p>}
+        {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
-      {/* Display recipe */}
+      {/* Display recipes */}
       <div className="recipe-list">
-        {/* {recipe.length > 0 ? (
-          recipe.map((recipe) => {
-            return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+        {recipes.length > 0 ? (
+          recipes.map((recipes) => {
+            return <RecipeCard key={recipes.idMeal} recepie={recipes} />;
           })
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
-        )} */}
-        {Object.keys(recipe).length > 0 ? (
+        )}
+        {/* {Object.keys(recipe).length > 0 ? (
           <RecipeCard key={recipe.idMeal} recepie={recipe} />
         ) : (
           <p>No recipe found</p>
-        )}
+        )} */}
       </div>
     </div>
   );
