@@ -8,11 +8,17 @@ function App() {
   const [activeComponent, setActiveComponent] = useState('mealName');
   return (
     <div>
-      <div>
-        <button onClick={() => setActiveComponent('mealName')}>
+      <div className="nav">
+        <button
+          onClick={() => setActiveComponent('mealName')}
+          className={activeComponent === 'mealName' ? 'active' : ''}
+        >
           Meal Name
         </button>
-        <button onClick={() => setActiveComponent('mainIngredien')}>
+        <button
+          onClick={() => setActiveComponent('mainIngredien')}
+          className={activeComponent === 'mainIngredien' ? 'active' : ''}
+        >
           Recipe List
         </button>
       </div>
