@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import RecipeList from './components/RecipeList';
 import MealName from './components/MealName';
+import Categories from './components/Categories';
 import './app.css';
 
 function App() {
@@ -21,8 +22,20 @@ function App() {
         >
           Recipe List
         </button>
+        <button
+          onClick={() => setActiveComponent('category')}
+          className={activeComponent === 'category' ? 'active' : ''}
+        >
+          Category
+        </button>
       </div>
-      {activeComponent == 'mealName' ? <MealName /> : <RecipeList />}
+      {activeComponent == 'mealName' ? (
+        <MealName />
+      ) : activeComponent == 'mainIngredien' ? (
+        <RecipeList />
+      ) : (
+        <Categories />
+      )}
     </div>
   );
 }
