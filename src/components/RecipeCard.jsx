@@ -50,8 +50,15 @@ const RecipeCard = ({ recepie }) => {
         ingredients.push(`${ingredient}`);
       }
     }
-    return ingredients.join(', ');
+    return ingredients;
   };
+
+  // Show only the first 3 ingredients initially
+  const getIngredientsToShow = () => {
+    const ingredients = getIngredients();
+    return showFullIngredients ? ingredients : ingredients.slice(0, 3); // Toggle between full or first 3 ingredients
+  };
+
   //  Function to get ingredients
   const getArea = () => {
     const area = detail[`strArea`];
@@ -84,10 +91,19 @@ const RecipeCard = ({ recepie }) => {
             <div className="ingredients">
               {/* <h3>Ingredients:</h3> */}
               <p className="ingredients-list">
-                {detail && getIngredients()
-                  ? getIngredients()
+                {detail && getIngredients().length > 0
+                  ? getIngredientsToShow().join(', ')
                   : 'No ingredients available.'}
               </p>
+              {/* Show More / Show Less button */}
+              {detail && (
+                <button
+                  onClick={handleToggleIngredients}
+                  className="show-more-btn"
+                >
+                  {showFullIngredients ? 'less' : 'Show More'}
+                </button>
+              )}
             </div>
 
             {/* Display recipe instructions */}
