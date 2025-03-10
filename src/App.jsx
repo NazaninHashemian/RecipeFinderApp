@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <MealName />
-      <RecipeList />
+      {/* <RecipeList /> */}
     </>
   );
 }
