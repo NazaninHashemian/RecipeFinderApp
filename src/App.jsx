@@ -4,10 +4,11 @@ import MealName from './components/MealName';
 import './app.css';
 
 function App() {
+  const [activeComponent, setActiveComponent] = useState('mealName');
   return (
     <>
       <MealName />
-      {/* <RecipeList /> */}
+      <RecipeList />
     </>
   );
 }
