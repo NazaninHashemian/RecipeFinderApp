@@ -58,11 +58,12 @@ const RecipeList = () => {
     <div>
       <h1 id="main-heading">Recipe with {ingredient || 'No ingredient'}</h1>
       <div className="search-container">
+        Main Ingredient:
         <input
           type="text"
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
-          placeholder="Enter Ingredient"
+          placeholder="Enter Main Ingredient"
           className="ingredient-input"
         />
         <button onClick={handleClearSearch} className="clear-btn">
