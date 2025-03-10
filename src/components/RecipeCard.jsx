@@ -99,7 +99,7 @@ const RecipeCard = ({ recepie }) => {
               {detail && (
                 <button
                   onClick={handleToggleIngredients}
-                  className="show-more-btn"
+                  className="show-more-btn ingredient"
                 >
                   {showFullIngredients ? 'less' : 'More'}
                 </button>

@@ -41,6 +41,7 @@
   border: none;
   cursor: pointer;
 }
+
 .show-more-btn:hover {
   color: #33f;
 }
@@ -53,6 +54,9 @@
 
   .show-more-btn {
     display: none; /* Hide the "Show More" button on larger screens */
+  }
+  .ingredient {
+    display: block;
   }
 }
 
