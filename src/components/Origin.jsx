@@ -62,9 +62,7 @@ const Origin = () => {
         </button>
       </div>
       <div className="load-error">
-        {loading && (
-          <p style={{ color: 'blue' }}>Loading based on main ingredient ....</p>
-        )}
+        {loading && <p style={{ color: 'blue' }}>Loading based on area ....</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
       {/* Display recipes */}

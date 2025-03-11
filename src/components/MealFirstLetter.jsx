@@ -1,59 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
-import './recipeList.css';
 
-const RecipeList = () => {
-  const [mealName, setMealName] = useState('Cake');
+const MealFirstLetter = () => {
+  const [mealStart, setMealStart] = useState('a');
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  // Fetch recipes by meal name
   useEffect(() => {
-    if (!mealName.trim()) return;
-
-    const fetchMealByName = async () => {
+    if (!mealStart.trim()) return;
+    const fetchMealByFuirstLetter = async () => {
       try {
         setLoading(true);
         setError(null);
 
         const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+          `https://www.themealdb.com/api/json/v1/1/search.php?f=${mealStart}`
         );
-
         const data = await response.json();
 
         if (data.meals) {
-          setRecipes(data.meals); // Set the recipes based on meal name
+          setRecipes(data.meals);
+          console.log(data.meals);
         } else {
-          setRecipes([]); // If no meals found, set an empty array
+          setRecipes([]);
         }
-
         setLoading(false);
       } catch (error) {
         setError(error.message);
         setLoading(false);
       }
     };
-
-    fetchMealByName();
-  }, [mealName]);
+    fetchMealByFuirstLetter();
+  }, [mealStart]);
 
   const handleClearSearch = () => {
-    setMealName(''); // Clear the meal name input
-    setRecipes([]);
     setError(null);
+    setRecipes([]);
+    setMealStart('');
   };
 
   return (
     <div>
-      <h1 id="main-heading">Recipe of {mealName || 'No meal name'}</h1>
+      <h1 id="main-heading">Recipe of {mealStart || 'No meal name'}</h1>
       <div className="search-container">
         <input
           type="text"
-          value={mealName}
-          onChange={(e) => setMealName(e.target.value)} // Update meal name on change
-          placeholder="Enter Meal Name"
+          value={mealStart}
+          onChange={(e) => setMealStart(e.target.value)}
+          placeholder="Enter Meal First Letter"
           className="ingredient-input"
         />
         <button onClick={handleClearSearch} className="clear-btn">
@@ -64,6 +58,7 @@ const RecipeList = () => {
         {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
+
       {/* Display recipes */}
       <div className="recipe-list">
         {recipes.length > 0 ? (
@@ -83,4 +78,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default MealFirstLetter;
