@@ -4,14 +4,14 @@ import './recipeList.css';
 
 const RecipeList = () => {
   // Set default meal name to "Battenberg Cake"
-  const [mealName, setMealName] = useState('Battenberg Cake');
+  const [mealName, setMealName] = useState('Cake');
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Fetch recipes by meal name
   useEffect(() => {
-    if (!mealName.trim()) return; // Skip if no meal name is provided
+    if (!mealName.trim()) return;
 
     const fetchMealByName = async () => {
       try {

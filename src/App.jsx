@@ -20,7 +20,7 @@ function App() {
           onClick={() => setActiveComponent('mainIngredien')}
           className={activeComponent === 'mainIngredien' ? 'active' : ''}
         >
-          Recipe List
+          Main Ingredient 
         </button>
         <button
           onClick={() => setActiveComponent('category')}
