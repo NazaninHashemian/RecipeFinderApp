@@ -90,11 +90,11 @@ const RecipeCard = ({ recepie }) => {
               </p>
             </div>
 
-            <div className="area">
+            <div className="category">
               <p className="">
                 {detail && detail.strCategory
                   ? `Category: ${detail.strCategory}`
-                  : ''}
+                  : 'category not available'}
               </p>
             </div>
 
