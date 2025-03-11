@@ -1,8 +1,9 @@
-/* recipeList.css */
+/* Recipe List Styles */
 #main-heading {
-  /* text-align: left; */
   padding-left: 10px;
 }
+
+/* Search Container */
 .search-container {
   padding-left: 10px;
   display: flex;
@@ -13,10 +14,13 @@
   width: 100%;
   max-width: 600px;
 }
+
+/* Error Loading Message */
 .load-error {
   padding-left: 10px;
 }
 
+/* Input Field */
 .ingredient-input {
   padding: 10px;
   border: 1px solid #ddd;
@@ -26,6 +30,7 @@
   box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
+/* Clear Button */
 .clear-btn {
   background-color: #ff4d4d;
   color: white;
@@ -34,14 +39,29 @@
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
+  width: auto; /* Let the button size adjust based on content */
 }
 
+/* Hover effect for the clear button */
 .clear-btn:hover {
   background-color: #e60000;
 }
 
-.recipe-list {
+/* Focus effect for accessibility */
+.clear-btn:focus {
+  outline: 2px solid #ff4d4d;
+  outline-offset: 2px;
+}
+
+/* Refresh Button */
+.refresh-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-left: 10px; /* Space between button and input field */
   display: flex;
-  flex-direction: column;
-  gap: 15px;
 }

@@ -50,7 +50,7 @@ const RandomRecipe = () => {
   return (
     <div>
       <h1 id="main-heading"> Random Recipe </h1>
-      <button onClick={handleRefresh} className="clear-btn">
+      <button onClick={handleRefresh} className="refresh-btn">
         New Recipe
       </button>
       <div className="load-error">

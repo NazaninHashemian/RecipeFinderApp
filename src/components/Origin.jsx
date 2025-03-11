@@ -29,11 +29,11 @@ const Origin = () => {
           setRecipes(data.meals);
         } else {
           setRecipes([]);
-          setLoading(false);
         }
       } catch (error) {
         setError(error.message);
-        setLoading(false);
+      } finally {
+        setLoading(false); // Always stop loading after the fetch completes (either success or failure)
       }
     };
     fetchData();
