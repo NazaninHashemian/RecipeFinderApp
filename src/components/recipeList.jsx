@@ -38,11 +38,10 @@ const RecipeList = () => {
           setRecipes([]);
           setLoading(false);
         }
-
-        setLoading(false); // Stop loading
       } catch (error) {
         setError(error.message);
-        setLoading(false); // Stop loading even if an error occurs
+      } finally {
+        setLoading(false);
       }
     };
 

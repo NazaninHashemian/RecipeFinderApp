@@ -1,3 +1,4 @@
+// src/components/Origin.jsx
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
@@ -33,7 +34,7 @@ const Origin = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false); // Always stop loading after the fetch completes (either success or failure)
+        setLoading(false);
       }
     };
     fetchData();
