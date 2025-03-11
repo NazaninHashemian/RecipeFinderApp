@@ -25,7 +25,7 @@ const RecipeCard = ({ recepie }) => {
         } else setDetail(null);
         setLoading(false);
       } catch (error) {
-        setError(error);
+        setError(error.message);
         setLoading(false);
       }
     };

@@ -4,7 +4,7 @@ import RecipeCard from './RecipeCard';
 import './recipeList.css';
 
 const RecipeList = () => {
-  const [recipes, setRecipes] = useState([]); //State to store the filtered recipes
+  const [recipes, setRecipes] = useState([]);
   const [ingredient, setIngredient] = useState('chicken_breast');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,8 +20,8 @@ const RecipeList = () => {
     //Define asynic funtion to fetch recipes
     const fetchData = async () => {
       try {
-        setLoading(true); // Start loading
-        setError(null); // Reset error before fetching
+        setLoading(true);
+        setError(null);
 
         // Making the API call
         const response = await fetch(
@@ -41,7 +41,7 @@ const RecipeList = () => {
 
         setLoading(false); // Stop loading
       } catch (error) {
-        setError('Failed to fetch recipes.');
+        setError(error.message);
         setLoading(false); // Stop loading even if an error occurs
       }
     };

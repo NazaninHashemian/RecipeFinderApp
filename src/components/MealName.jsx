@@ -32,7 +32,7 @@ const RecipeList = () => {
 
         setLoading(false);
       } catch (error) {
-        setError('Failed to fetch meals.');
+        setError(error.message);
         setLoading(false);
       }
     };

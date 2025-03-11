@@ -18,14 +18,14 @@ const Categories = () => {
         const data = await response.json();
         if (data.categories) {
           setCategories(data.categories);
-          console.log(data.categories);
+          // console.log(data.categories);
         } else {
           setCategories([]);
         }
         setLoading(false);
       } catch (error) {
         setLoading(false);
-        setError(error);
+        setError(error.message);
       }
     };
     fetchCategories();
@@ -34,6 +34,7 @@ const Categories = () => {
   if (error) return <div>{error.message}</div>;
   return (
     <div className="category-list">
+      <h1>Recipe Categories</h1>
       {categories.length > 0 ? (
         categories.map((category) => (
           <div key={category.idCategory}>
