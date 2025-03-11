@@ -5,6 +5,7 @@ import './recipeList.css';
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState([]);
+  const [refresh, setRefresh] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -39,16 +40,19 @@ const RandomRecipe = () => {
     };
 
     fetchData();
-  }, []);
+  }, [refresh]);
 
-  const handleClearSearch = () => {
-    setIngredient('');
+  const handleRefresh = () => {
+    setRefresh((r) => !r);
     setRecipe([]);
     setError(null);
   };
   return (
     <div>
-      <h1 id="main-heading">Random Recipe </h1>
+      <h1 id="main-heading"> Random Recipe </h1>
+      <button onClick={handleRefresh} className="clear-btn">
+        New Recipe
+      </button>
       <div className="load-error">
         {loading && (
           <p style={{ color: 'blue' }}>Loading a random recipe....</p>
