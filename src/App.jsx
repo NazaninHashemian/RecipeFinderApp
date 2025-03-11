@@ -5,6 +5,7 @@ import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories';
 import Origin from './components/Origin';
+import Random from './components/Random';
 import './app.css';
 
 function App() {
@@ -15,16 +16,18 @@ function App() {
     mealName: <MealName />,
     mealFirstLetter: <MealFirstLetter />,
     mainIngredient: <RecipeList />,
-    category: <Categories />,
     origin: <Origin />,
+    random: <Random />,
+    category: <Categories />,
   };
 
   const buttons = [
     { name: 'mealName', content: 'Name' },
     { name: 'mealFirstLetter', content: 'First Letter' },
     { name: 'mainIngredient', content: 'Ingredient' },
-    { name: 'category', content: 'Category' },
     { name: 'origin', content: 'Origin' },
+    { name: 'random', content: 'Random' },
+    { name: 'category', content: 'Category' },
   ];
 
   return (

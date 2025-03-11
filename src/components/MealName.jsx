@@ -3,7 +3,7 @@ import RecipeCard from './RecipeCard';
 import './recipeList.css';
 
 const RecipeList = () => {
-  const [mealName, setMealName] = useState('Cake');
+  const [mealName, setMealName] = useState('soup');
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
