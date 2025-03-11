@@ -23,7 +23,7 @@ const Origin = () => {
           `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
         );
         const data = await response.json();
-        console.log(data.meals);
+        // console.log(data.meals);
 
         if (data.meals) {
           setRecipes(data.meals);
@@ -47,9 +47,9 @@ const Origin = () => {
 
   return (
     <div>
-      <h1 id="main-heading">Recipe with {area || 'No Area'}</h1>
+      <h1 id="main-heading">{area || 'No Area'} Recipes</h1>
       <div className="search-container">
-        Main Ingredient:
+        Origin:
         <input
           type="text"
           value={area}

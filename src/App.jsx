@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import RecipeList from './components/RecipeList';
 import MealName from './components/MealName';
+import FirstLetter from './components/FirstLetter';
 import Categories from './components/Categories';
 import Origin from './components/Origin';
 import './app.css';
@@ -12,14 +13,16 @@ function App() {
   // Define the components and button configuration
   const components = {
     mealName: <MealName />,
+    firstLetter: <FirstLetter />,
     mainIngredient: <RecipeList />,
     category: <Categories />,
     origin: <Origin />,
   };
 
   const buttons = [
-    { name: 'mealName', content: 'Meal Name' },
-    { name: 'mainIngredient', content: 'Main Ingredient' },
+    { name: 'mealName', content: 'Name' },
+    { name: 'firstLetter', content: 'First Letter' },
+    { name: 'mainIngredient', content: 'Ingredient' },
     { name: 'category', content: 'Category' },
     { name: 'origin', content: 'Origin' },
   ];

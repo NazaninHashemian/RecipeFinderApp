@@ -48,7 +48,7 @@ const RecipeList = () => {
 
   return (
     <div>
-      <h1 id="main-heading">Search for Meals</h1>
+      <h1 id="main-heading">Recipe of {mealName || 'No meal name'}</h1>
       <div className="search-container">
         <input
           type="text"
