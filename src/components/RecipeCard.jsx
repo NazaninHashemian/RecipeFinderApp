@@ -80,11 +80,21 @@ const RecipeCard = ({ recepie }) => {
             alt={recepie.strMeal}
           />
 
-          <div className="recipe-instructions">
+          <div className="recipe-detail">
             {/* Display Area section */}
             <div className="area">
               <p className="">
-                {detail && getArea() ? getArea() : 'Area not available.'}
+                {detail && getArea()
+                  ? `Origin: ${getArea()}`
+                  : 'Area not available.'}
+              </p>
+            </div>
+
+            <div className="area">
+              <p className="">
+                {detail && detail.strCategory
+                  ? `Category: ${detail.strCategory}`
+                  : ''}
               </p>
             </div>
 

@@ -40,7 +40,7 @@ const Categories = () => {
             <img
               src={category.strCategoryThumb}
               alt={category.strCategory}
-              style={{ width: '100px', height: '100px' }}
+              style={{ width: '100px', height: 'auto' }}
             />
             <h3>{category.strCategory}</h3>
             <p>{category.strCategoryDescription}</p>
