@@ -49,6 +49,7 @@ const MealFirstLetter = () => {
           onChange={(e) => setMealStart(e.target.value)}
           placeholder="Enter Meal First Letter"
           className="ingredient-input"
+          maxLength={1} // Restrict input to only one character
         />
         <button onClick={handleClearSearch} className="clear-btn">
           Clear
