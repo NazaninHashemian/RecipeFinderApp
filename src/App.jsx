@@ -16,7 +16,7 @@ function App() {
     mealName: <MealName />,
     mealFirstLetter: <MealFirstLetter />,
     mainIngredient: <RecipeList />,
-    origin: <Origin />,
+    cuisine: <Origin />,
     random: <Random />,
     category: <Categories />,
   };
@@ -25,7 +25,7 @@ function App() {
     { name: 'mealName', content: 'Name' },
     { name: 'mealFirstLetter', content: 'First Letter' },
     { name: 'mainIngredient', content: 'Ingredient' },
-    { name: 'origin', content: 'Origin' },
+    { name: 'cuisine', content: 'Cuisine' },
     { name: 'random', content: 'Random' },
     { name: 'category', content: 'Category' },
   ];

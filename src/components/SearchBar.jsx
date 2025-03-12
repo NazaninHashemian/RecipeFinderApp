@@ -1,3 +1,4 @@
+//  src/components/SearchBar.jsx
 import React from 'react';
 
 const SearchBar = ({ label, value, onChange, onClear, placeholder }) => {

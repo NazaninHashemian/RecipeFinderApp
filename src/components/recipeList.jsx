@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import './recipeList.css';
+import SearchBar from './SearchBar';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -56,19 +57,14 @@ const RecipeList = () => {
   return (
     <div>
       <h1 id="main-heading">Recipe with {ingredient || 'No ingredient'}</h1>
-      <div className="search-container">
-        Main Ingredient:
-        <input
-          type="text"
-          value={ingredient}
-          onChange={(e) => setIngredient(e.target.value)}
-          placeholder="Enter Main Ingredient"
-          className="ingredient-input"
-        />
-        <button onClick={handleClearSearch} className="clear-btn">
-          Clear
-        </button>
-      </div>
+
+      <SearchBar
+        label="Main Ingredient:"
+        value={ingredient}
+        onChange={(e) => setIngredient(e.target.value)}
+        onClear={handleClearSearch}
+        placeholder="Enter Main Ingredient"
+      />
       <div className="load-error">
         {loading && (
           <p style={{ color: 'blue' }}>Loading based on main ingredient ....</p>

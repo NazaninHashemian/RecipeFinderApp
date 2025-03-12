@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
-const Origin = () => {
+const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
   const [area, setArea] = useState('Canadian');
   const [loading, setLoading] = useState(false);
@@ -50,12 +50,12 @@ const Origin = () => {
     <div>
       <h1 id="main-heading">{area || 'No Area'} Recipes</h1>
       <div className="search-container">
-        Origin:
+        Cuisine:
         <input
           type="text"
           value={area}
           onChange={(e) => setArea(e.target.value)}
-          placeholder="Enter food origin"
+          placeholder="Enter food cuisine"
           className="ingredient-input"
         />
         <button onClick={handleClearSearch} className="clear-btn">
@@ -79,4 +79,4 @@ const Origin = () => {
     </div>
   );
 };
-export default Origin;
+export default Cuisine;
