@@ -15,8 +15,8 @@
 .dropdown {
   position: absolute; /* Position the dropdown absolutely inside the search container */
   top: 100%; /* Align it below the input field */
-  left: 0;
-  width: 100%; /* Match the width of the input */
+  left: 60px;
+  width: 200px;
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
