@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
+import SearchBar from './SearchBar';
 
 const MealFirstLetter = () => {
   const [mealStart, setMealStart] = useState('a');
@@ -42,19 +43,13 @@ const MealFirstLetter = () => {
   return (
     <div>
       <h1 id="main-heading">Recipe of {mealStart || 'No meal name'}</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          value={mealStart}
-          onChange={(e) => setMealStart(e.target.value)}
-          placeholder="Enter Meal First Letter"
-          className="ingredient-input"
-          maxLength={1} // Restrict input to only one character
-        />
-        <button onClick={handleClearSearch} className="clear-btn">
-          Clear
-        </button>
-      </div>
+      <SearchBar
+        label="First Letter: "
+        value={mealStart}
+        onChange={(e) => setIngredient(e.target.value)}
+        onClear={handleClearSearch}
+        placeholder="Enter Meal Name"
+      />
       <div className="load-error">
         {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}

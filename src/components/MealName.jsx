@@ -57,18 +57,6 @@ const RecipeList = () => {
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
       />
-      {/* <div className="search-container">
-        <input
-          type="text"
-          value={mealName}
-          onChange={(e) => setMealName(e.target.value)} // Update meal name on change
-          placeholder="Enter Meal Name"
-          className="ingredient-input"
-        />
-        <button onClick={handleClearSearch} className="clear-btn">
-          Clear
-        </button>
-      </div> */}
       <div className="load-error">
         {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}

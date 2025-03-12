@@ -1,15 +1,16 @@
 // src/components/Cuisine.jsx
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
+import SearchBar from './SearchBar';
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
-  const [area, setArea] = useState('Canadian');
+  const [cuisine, setcuisine] = useState('Canadian');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!area.trim()) {
+    if (!cuisine.trim()) {
       setError('Please enter foods cuisine.');
       setLoading(false);
       setRecipes([]);
@@ -21,7 +22,7 @@ const Cuisine = () => {
         setError(null); // Reset error before fetching
 
         const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
+          `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisine}`
         );
         const data = await response.json();
         // console.log(data.meals);
@@ -38,32 +39,28 @@ const Cuisine = () => {
       }
     };
     fetchData();
-  }, [area]);
+  }, [cuisine]);
 
   const handleClearSearch = () => {
-    setArea('');
+    setcuisine('');
     setRecipes([]);
     setError(null);
   };
 
   return (
     <div>
-      <h1 id="main-heading">{area || 'No Area'} Recipes</h1>
-      <div className="search-container">
-        Cuisine:
-        <input
-          type="text"
-          value={area}
-          onChange={(e) => setArea(e.target.value)}
-          placeholder="Enter food cuisine"
-          className="ingredient-input"
-        />
-        <button onClick={handleClearSearch} className="clear-btn">
-          Clear
-        </button>
-      </div>
+      <h1 id="main-heading">{cuisine || 'No Cuisine'} Recipes</h1>
+      <SearchBar
+        label="Cuisine: "
+        value={cuisine}
+        onChange={(e) => setIngredient(e.target.value)}
+        onClear={handleClearSearch}
+        placeholder="Enter Meal Name"
+      />
       <div className="load-error">
-        {loading && <p style={{ color: 'blue' }}>Loading based on area ....</p>}
+        {loading && (
+          <p style={{ color: 'blue' }}>Loading based on cuisine ....</p>
+        )}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
       {/* Display recipes */}
