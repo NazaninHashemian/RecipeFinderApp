@@ -1,6 +1,7 @@
 // src/components/mealName.jsx
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
+import SearchBar from './SearchBar';
 import './recipeList.css';
 
 const RecipeList = () => {
@@ -49,7 +50,14 @@ const RecipeList = () => {
   return (
     <div>
       <h1 id="main-heading">Recipe of {mealName || 'No meal name'}</h1>
-      <div className="search-container">
+      <SearchBar
+        label="Main Ingredient:"
+        value={mealName}
+        onChange={(e) => setIngredient(e.target.value)}
+        onClear={handleClearSearch}
+        placeholder="Enter Meal Name"
+      />
+      {/* <div className="search-container">
         <input
           type="text"
           value={mealName}
@@ -60,7 +68,7 @@ const RecipeList = () => {
         <button onClick={handleClearSearch} className="clear-btn">
           Clear
         </button>
-      </div>
+      </div> */}
       <div className="load-error">
         {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}

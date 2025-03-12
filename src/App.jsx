@@ -4,7 +4,7 @@ import RecipeList from './components/RecipeList';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories';
-import Origin from './components/Origin';
+import Cuisine from './components/Cuisine';
 import Random from './components/Random';
 import './app.css';
 
@@ -16,7 +16,7 @@ function App() {
     mealName: <MealName />,
     mealFirstLetter: <MealFirstLetter />,
     mainIngredient: <RecipeList />,
-    cuisine: <Origin />,
+    cuisine: <Cuisine />,
     random: <Random />,
     category: <Categories />,
   };

@@ -1,8 +1,8 @@
 // src/components/RecipeList.jsx
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
-import './recipeList.css';
 import SearchBar from './SearchBar';
+import './recipeList.css';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -57,7 +57,6 @@ const RecipeList = () => {
   return (
     <div>
       <h1 id="main-heading">Recipe with {ingredient || 'No ingredient'}</h1>
-
       <SearchBar
         label="Main Ingredient:"
         value={ingredient}

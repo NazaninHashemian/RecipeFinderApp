@@ -1,4 +1,4 @@
-// src/components/Origin.jsx
+// src/components/Cuisine.jsx
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
@@ -10,7 +10,7 @@ const Cuisine = () => {
 
   useEffect(() => {
     if (!area.trim()) {
-      setError('Please enter foods origin.');
+      setError('Please enter foods cuisine.');
       setLoading(false);
       setRecipes([]);
       return;
