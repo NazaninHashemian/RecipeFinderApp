@@ -22,7 +22,7 @@ const MealFirstLetter = () => {
 
         if (data.meals) {
           setRecipes(data.meals);
-          console.log(data.meals);
+          // console.log(data.meals);
         } else {
           setRecipes([]);
         }
@@ -47,7 +47,7 @@ const MealFirstLetter = () => {
       <SearchBar
         label="First Letter: "
         value={mealStart}
-        onChange={(e) => setMealStart(e.target.value)}
+        onChange={setMealStart}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
       />

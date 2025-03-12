@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
-  const [cuisine, setcuisine] = useState('Canadian');
+  const [cuisine, setCuisine] = useState('Canadian');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -53,7 +53,7 @@ const Cuisine = () => {
       <SearchBar
         label="Cuisine: "
         value={cuisine}
-        onChange={(e) => setcuisine(e.target.value)}
+        onChange={setCuisine}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
       />
