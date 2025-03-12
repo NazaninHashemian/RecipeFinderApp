@@ -1,7 +1,7 @@
 /* Ensure the search-container div has position relative for dropdown positioning */
 .search-container {
   position: relative; /* Allow the dropdown to be positioned relative to this container */
-  padding-left: 10px;
+  padding-left: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -15,21 +15,25 @@
 .dropdown {
   position: absolute; /* Position the dropdown absolutely inside the search container */
   top: 100%; /* Align it below the input field */
-  left: 60px;
-  width: 200px;
+  left: 78px; /* Align the dropdown to the left edge of the search container */
+  width: 100px; /* Make dropdown the same width as the input field */
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-height: 200px; /* Limit the height of the dropdown */
+  max-height: 190px; /* Limit the height of the dropdown */
   overflow-y: auto; /* Add scroll if content exceeds max height */
   z-index: 10; /* Make sure it appears above other elements */
   list-style-type: none;
+  padding: 0; /* Remove any default padding from the dropdown */
+  margin: 0; /* Remove any default margin from the dropdown */
 }
 
 /* Style for each dropdown list item */
 .dropdown li {
-  padding: 8px;
+  padding: 4px 5px; /* Adjust padding to center the text */
   cursor: pointer;
+  text-align: center;
+  width: 100%; /* Ensure the li takes up the full width */
 }
 
 .dropdown li:hover {
