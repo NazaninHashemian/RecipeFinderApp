@@ -42,7 +42,7 @@ const Cuisine = () => {
   }, [cuisine]);
 
   const handleClearSearch = () => {
-    setcuisine('');
+    setCuisine('');
     setRecipes([]);
     setError(null);
   };
