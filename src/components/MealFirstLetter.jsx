@@ -1,3 +1,4 @@
+// src/components/MealFirstLetter.jsx
 import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
@@ -46,7 +47,7 @@ const MealFirstLetter = () => {
       <SearchBar
         label="First Letter: "
         value={mealStart}
-        onChange={(e) => setIngredient(e.target.value)}
+        onChange={(e) => setMealStart(e.target.value)}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
       />

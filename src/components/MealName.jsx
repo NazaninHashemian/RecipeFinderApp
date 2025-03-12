@@ -53,7 +53,7 @@ const RecipeList = () => {
       <SearchBar
         label="Main Ingredient:"
         value={mealName}
-        onChange={(e) => setIngredient(e.target.value)}
+        onChange={(e) => setMealName(e.target.value)}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
       />
