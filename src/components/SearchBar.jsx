@@ -1,43 +1,23 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import fetchCuisines from '../utils/cuisinesApi';
 import './searchBar.css';
 
 const SearchBar = ({ label, value, onChange, onClear, placeholder }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [filteredCuisines, setFilteredCuisines] = useState([]);
+  const [cuisines, setCuisines] = useState([]);
 
-  // Updated list of cuisines
-  const cuisines = [
-    'American',
-    'British',
-    'Canadian',
-    'Chinese',
-    'Croatian',
-    'Dutch',
-    'Egyptian',
-    'Filipino',
-    'French',
-    'Greek',
-    'Indian',
-    'Irish',
-    'Italian',
-    'Jamaican',
-    'Japanese',
-    'Kenyan',
-    'Malaysian',
-    'Mexican',
-    'Moroccan',
-    'Polish',
-    'Portuguese',
-    'Russian',
-    'Spanish',
-    'Thai',
-    'Tunisian',
-    'Turkish',
-    'Ukrainian',
-    'Uruguayan',
-    'Vietnamese',
-  ];
+  useEffect(() => {
+    const loadCuisines = async () => {
+      try {
+        const fetchedCuisines = await fetchCuisines();
+        setCuisines(fetchedCuisines);
+      } catch (error) {
+        console.error('Error fetching cuisines:', error);
+      }
+    };
+    loadCuisines();
+  }, []);
 
   // Handle input change and filter cuisines based on the input
   const handleInputChange = (e) => {
