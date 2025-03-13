@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
+
 import './searchBar.css';
+
 const SearchBar = ({ label, value, onChange, onClear, placeholder }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [filteredCuisines, setFilteredCuisines] = useState([]);
 
   // Updated list of cuisines
   const cuisines = [
-    'Canadian',
     'American',
-    'Irish',
     'British',
+    'Canadian',
+    'Chinese',
+    'Croatian',
+    'Dutch',
+    'Egyptian',
+    'Filipino',
+    'French',
+    'Greek',
+    'Indian',
+    'Irish',
     'Italian',
     'Jamaican',
-    'Russian',
-    'Tunisian',
-    'Chinese',
-    'Portuguese',
-    'Malaysian',
-    'French',
     'Japanese',
-    'Indian',
-    'Filipino',
-    'Vietnamese',
-    'Uruguayan',
+    'Kenyan',
+    'Malaysian',
     'Mexican',
-    'Polish',
     'Moroccan',
-    'Greek',
+    'Polish',
+    'Portuguese',
+    'Russian',
+    'Spanish',
+    'Thai',
+    'Tunisian',
+    'Turkish',
+    'Ukrainian',
+    'Uruguayan',
+    'Vietnamese',
   ];
 
   // Handle input change and filter cuisines based on the input

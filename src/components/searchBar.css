@@ -16,7 +16,7 @@
   position: absolute; /* Position the dropdown absolutely inside the search container */
   top: 100%; /* Align it below the input field */
   left: 78px; /* Align the dropdown to the left edge of the search container */
-  width: 100px; /* Make dropdown the same width as the input field */
+  width: 150px; /* Make dropdown the same width as the input field */
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,8 @@
   overflow-y: auto; /* Add scroll if content exceeds max height */
   z-index: 10; /* Make sure it appears above other elements */
   list-style-type: none;
-  padding: 0; /* Remove any default padding from the dropdown */
-  margin: 0; /* Remove any default margin from the dropdown */
+  padding: 0;
+  margin: 0;
 }
 
 /* Style for each dropdown list item */
