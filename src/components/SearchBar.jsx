@@ -9,16 +9,21 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder }) => {
 
   useEffect(() => {
     const loadCuisines = async () => {
-      try {
-        const fetchedCuisines = await fetchCuisines();
-        setCuisines(fetchedCuisines);
-      } catch (error) {
-        console.error('Error fetching cuisines:', error);
+      const cachedCuisines = localStorage.getItem('cuisines'); // Check localStorage for cached cuisines
+      if (cachedCuisines) {
+        setCuisines(JSON.parse(cachedCuisines)); // Load from localStorage
+      } else {
+        try {
+          const fetchedCuisines = await fetchCuisines();
+          setCuisines(fetchedCuisines);
+          localStorage.setItem('cuisines', JSON.stringify(fetchedCuisines)); // Cache the cuisines in localStorage
+        } catch (error) {
+          console.error('Error fetching cuisines:', error);
+        }
       }
     };
-    loadCuisines();
+    loadCuisines(); //  Call the function inside useEffect to run when the component mounts
   }, []);
-
   // Handle input change and filter cuisines based on the input
   const handleInputChange = (e) => {
     onChange(e.target.value); // Update the input value in the parent component
