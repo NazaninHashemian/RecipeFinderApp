@@ -1,6 +1,6 @@
 //App.jsx
 import { useState } from 'react';
-import RecipeList from './components/RecipeList';
+import MainIngredient from './components/MainIngredient';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories';
@@ -15,7 +15,7 @@ function App() {
   const components = {
     mealName: <MealName />,
     mealFirstLetter: <MealFirstLetter />,
-    mainIngredient: <RecipeList />,
+    mainIngredient: <MainIngredient />,
     cuisine: <Cuisine />,
     random: <Random />,
     category: <Categories />,

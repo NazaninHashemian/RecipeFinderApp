@@ -4,7 +4,7 @@ import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import './recipeList.css';
 
-const RecipeList = () => {
+const MainIngredient = () => {
   const [recipes, setRecipes] = useState([]);
   const [ingredient, setIngredient] = useState('chicken_breast');
   const [loading, setLoading] = useState(false);
@@ -84,4 +84,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default MainIngredient;
