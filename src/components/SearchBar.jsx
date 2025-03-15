@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './searchBar.css';
-import { isTemplateLiteralTypeSpan } from 'typescript';
 
-const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchData, cacheKey}) => {
+const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunction, cacheKey}) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
   const [items, setItems] = useState([]);
-
 
   useEffect(() => {
     const loadData = async () => {
@@ -24,7 +22,7 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchData, ca
       }
     };
     loadData(); 
-  }, [fetchData, cacheKey]);
+  }, [fetchDataFunction, cacheKey]);
   // Handle input change and filter cuisines based on the input
   const handleInputChange = (e) => {
     onChange(e.target.value); // Update the input value in the parent component

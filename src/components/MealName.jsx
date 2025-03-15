@@ -57,7 +57,7 @@ const MealName = () => {
         onChange={setMealName}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
-        fetchData={fetchNames}
+        fetchDataFunction={fetchNames}
         cacheKey="names"
       />
       <div className="load-error">

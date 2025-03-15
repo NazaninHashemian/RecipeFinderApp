@@ -64,7 +64,7 @@ const MainIngredient = () => {
         onChange={setIngredient}
         onClear={handleClearSearch}
         placeholder="Enter Main Ingredient"
-        fetchData={fetchIngredients}
+        fetchDataFunction={fetchIngredients}
         cacheKey="ingredients"
       />
       <div className="load-error">
