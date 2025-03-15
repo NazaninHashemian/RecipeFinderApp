@@ -1,45 +1,44 @@
 import React, { useEffect, useState } from 'react';
+import fetchCuisines from '../utils/cuisinesApi';
 import './searchBar.css';
-import { isTemplateLiteralTypeSpan } from 'typescript';
 
-const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchData, cacheKey}) => {
+const SearchBar = ({ label, value, onChange, onClear, placeholder }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [items, setItems] = useState([]);
-
+  const [filteredCuisines, setFilteredCuisines] = useState([]);
+  const [cuisines, setCuisines] = useState([]);
 
   useEffect(() => {
-    const loadData = async () => {
-      const cachedData = localStorage.getItem(cacheKey); // Check localStorage for cached cuisines
-      if (cachedData) {
-        setItems(JSON.parse(cachedData)); // Load from localStorage
+    const loadCuisines = async () => {
+      const cachedCuisines = localStorage.getItem('cuisines'); // Check localStorage for cached cuisines
+      if (cachedCuisines) {
+        setCuisines(JSON.parse(cachedCuisines)); // Load from localStorage
       } else {
         try {
-          const fetchedData = await fetchData(); // Fetch dynamically
-          setItems(fetchedData);
-          localStorage.setItem(cacheKey, JSON.stringify(fetchedData)); // Cache the cuisines in localStorage
+          const fetchedCuisines = await fetchCuisines();
+          setCuisines(fetchedCuisines);
+          localStorage.setItem('cuisines', JSON.stringify(fetchedCuisines)); // Cache the cuisines in localStorage
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error('Error fetching cuisines:', error);
         }
       }
     };
-    loadData(); 
-  }, [fetchData, cacheKey]);
+    loadCuisines(); //  Call the function inside useEffect to run when the component mounts
+  }, []);
   // Handle input change and filter cuisines based on the input
   const handleInputChange = (e) => {
     onChange(e.target.value); // Update the input value in the parent component
     const searchTerm = e.target.value.toLowerCase();
-    setFilteredItems(
-      items.filter(
-        (item) => item.toLowerCase().includes(searchTerm) // Filter list based on input
+    setFilteredCuisines(
+      cuisines.filter(
+        (cuisine) => cuisine.toLowerCase().includes(searchTerm) // Filter list based on input
       )
     );
     setIsDropdownVisible(searchTerm.length > 0); // Show dropdown when there's input
   };
 
   // Handle cuisine selection from the dropdown
-  const handleSelectItem= (selectedItem) => {
-    onChange(selectedItem); // Set the selected item to the input field
+  const handleSelectCuisine = (selectedCuisine) => {
+    onChange(selectedCuisine); // Set the selected cuisine to the input field
     setIsDropdownVisible(false); // Hide dropdown after selection
   };
 
@@ -55,11 +54,11 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchData, ca
         onFocus={() => setIsDropdownVisible(true)} // Show dropdown when the input is focused
       />
       {/* Dropdown for filtered cuisines */}
-      {isDropdownVisible && filteredItems.length > 0 && (
+      {isDropdownVisible && filteredCuisines.length > 0 && (
         <ul className="dropdown">
-          {filteredItems.map((item, index) => (
-            <li key={index} onClick={() => handleSelectItem(item)}>
-              {item}
+          {filteredCuisines.map((cuisine, index) => (
+            <li key={index} onClick={() => handleSelectCuisine(cuisine)}>
+              {cuisine}
             </li>
           ))}
         </ul>

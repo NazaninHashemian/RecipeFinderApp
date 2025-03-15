@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
+import fetchCuisines from '../utils/cuisinesApi';
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
@@ -25,7 +26,6 @@ const Cuisine = () => {
           `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisine}`
         );
         const data = await response.json();
-        // console.log(data.meals);
 
         if (data.meals) {
           setRecipes(data.meals);
@@ -55,7 +55,9 @@ const Cuisine = () => {
         value={cuisine}
         onChange={setCuisine}
         onClear={handleClearSearch}
-        placeholder="Enter Meal Name"
+        placeholder="Enter Cuisine Name"
+        fetchDataFunction={fetchCuisines}
+        cacheKey="cuisines"
       />
       <div className="load-error">
         {loading && (

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
+import fetchIngredients from '../utils/ingredientsApi';
 import './recipeList.css';
 
 const MainIngredient = () => {
@@ -63,6 +64,8 @@ const MainIngredient = () => {
         onChange={setIngredient}
         onClear={handleClearSearch}
         placeholder="Enter Main Ingredient"
+        fetchData={fetchIngredients}
+        cacheKey="ingredients"
       />
       <div className="load-error">
         {loading && (
