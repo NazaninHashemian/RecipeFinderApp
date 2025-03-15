@@ -11,9 +11,9 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunc
       const cachedData = localStorage.getItem(cacheKey); // Check localStorage for cached cuisines
       if (cachedData) {
         setItems(JSON.parse(cachedData)); // Load from localStorage
-      } else {
+      } else  if (fetchDataFunction) {
         try {
-          const fetchedData = await fetchData(); // Fetch dynamically
+          const fetchedData = await fetchDataFunction(); // Fetch dynamically
           setItems(fetchedData);
           localStorage.setItem(cacheKey, JSON.stringify(fetchedData)); // Cache the cuisines in localStorage
         } catch (error) {
