@@ -10,7 +10,7 @@ const fetchIngredients = async () => {
     }
     return []; // If no ingredients are found, return an empty array
   } catch (error) {
-    console.error('Error fetching cuisines:', error);
+    console.error('Error fetching ingredients :', error);
     return []; // Return an empty array in case of an error
   }
 };
