@@ -9,7 +9,7 @@ body {
 .nav {
   display: flex;
   justify-content: center;
-  gap: 1.1%;
+  gap: 1.8%;
 }
 .nav button {
   padding: 15% 0.3%;
@@ -31,24 +31,37 @@ body {
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .nav {
-    gap: 1%; /* Reduced space between buttons */
+    gap: 1.7%; /* Reduced space between buttons */
   }
 
   .nav button {
     padding: 12% 0.1%; /* Smaller horizontal padding */
     font-size: 0.8em; /* Smaller font size */
-    width: 3.9rem;
+    width: 4.8rem;
   }
 }
-/* Media query for screens smaller than 400px */
-@media (max-width: 400px) {
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
   .nav {
-    gap: .1%; /* Even smaller space between buttons */
+    gap: 0.5%; /* Even smaller space between buttons */
   }
 
   .nav button {
     padding: 8% 0; /* Further reduce horizontal padding */
-    font-size: 0.7em;  /* Smaller font size */
-    width: 3.5rem;
+    font-size: 0.7em; /* Smaller font size */
+    width: 3.6rem;
+  }
+}
+
+/* Optional: Media query for very small screens below 320px (if needed) */
+@media (max-width: 340px) {
+  .nav {
+    gap: 0; /* no space between buttons */
+  }
+
+  .nav button {
+    padding: 5% 0; /* Even smaller horizontal padding */
+    font-size: 0.2em; /* Even smaller font size */
+    width: 3rem;
   }
 }
