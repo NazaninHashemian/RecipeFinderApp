@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './searchBar.css';
 
-const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunction, cacheKey}) => {
+const SearchBar = ({
+  label,
+  value,
+  onChange,
+  onClear,
+  placeholder,
+  fetchDataFunction,
+  cacheKey,
+}) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
   const [items, setItems] = useState([]);
@@ -11,7 +19,7 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunc
       const cachedData = localStorage.getItem(cacheKey); // Check localStorage for cached cuisines
       if (cachedData) {
         setItems(JSON.parse(cachedData)); // Load from localStorage
-      } else  if (fetchDataFunction) {
+      } else if (fetchDataFunction) {
         try {
           const fetchedData = await fetchDataFunction(); // Fetch dynamically
           setItems(fetchedData);
@@ -21,7 +29,7 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunc
         }
       }
     };
-    loadData(); 
+    loadData();
   }, [fetchDataFunction, cacheKey]);
   // Handle input change and filter cuisines based on the input
   const handleInputChange = (e) => {
@@ -36,7 +44,7 @@ const SearchBar = ({ label, value, onChange, onClear, placeholder, fetchDataFunc
   };
 
   // Handle cuisine selection from the dropdown
-  const handleSelectItem= (selectedItem) => {
+  const handleSelectItem = (selectedItem) => {
     onChange(selectedItem); // Set the selected item to the input field
     setIsDropdownVisible(false); // Hide dropdown after selection
   };

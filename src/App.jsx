@@ -1,5 +1,4 @@
-//App.jsx
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MainIngredient from './components/MainIngredient';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
@@ -9,45 +8,45 @@ import Random from './components/Random';
 import './app.css';
 
 function App() {
-  const [activeComponent, setActiveComponent] = useState('mealName');
-
-  // Define the components and button configuration
-  const components = {
-    mealName: <MealName />,
-    mealFirstLetter: <MealFirstLetter />,
-    mainIngredient: <MainIngredient />,
-    cuisine: <Cuisine />,
-    random: <Random />,
-    category: <Categories />,
-  };
-
-  const buttons = [
-    { name: 'mealName', content: 'Name' },
-    { name: 'mealFirstLetter', content: 'First Letter' },
-    { name: 'mainIngredient', content: 'Ingredient' },
-    { name: 'cuisine', content: 'Cuisine' },
-    { name: 'random', content: 'Random' },
-    { name: 'category', content: 'Category' },
-  ];
-
   return (
-    <div>
+    <Router>
       <div className="nav">
-        {buttons.map(({ name, content }) => {
-          return (
-            <button
-              key={name}
-              onClick={() => setActiveComponent(name)}
-              className={activeComponent === name ? 'active' : ''}
-            >
-              {content}
-            </button>
-          );
-        })}
+        <Link to="/name">
+          {' '}
+          <button>Name</button>{' '}
+        </Link>
+        <Link to="/first-letter">
+          {' '}
+          <button>First Letter</button>{' '}
+        </Link>
+        <Link to="/ingredient">
+          {' '}
+          <button>Ingredient</button>{' '}
+        </Link>
+        <Link to="/cuisine">
+          {' '}
+          <button>Cuisine</button>{' '}
+        </Link>
+        <Link to="/random">
+          {' '}
+          <button>Random</button>{' '}
+        </Link>
+        <Link to="/category">
+          {' '}
+          <button>Category</button>{' '}
+        </Link>
       </div>
 
-      <div>{components[activeComponent]}</div>
-    </div>
+      <Routes>
+        <Route path="/name" element={<MealName />} />
+        <Route path="/first-letter" element={<MealFirstLetter />} />
+        <Route path="/ingredient" element={<MainIngredient />} />
+        <Route path="/cuisine" element={<Cuisine />} />
+        <Route path="/random" element={<Random />} />
+        <Route path="/category" element={<Categories />} />
+        <Route path="*" element={<MealName />} /> {/* Default Route */}
+      </Routes>
+    </Router>
   );
 }
 

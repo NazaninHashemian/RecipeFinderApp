@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
-import fetchNames from '../utils/mealNameApi';
 import './recipeList.css';
 
-const MealName = () => {
+const RecipeList = () => {
   const [mealName, setMealName] = useState('soup');
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -52,13 +51,11 @@ const MealName = () => {
     <div>
       <h1 id="main-heading">Recipe of {mealName || 'No meal name'}</h1>
       <SearchBar
-        label="Meal Name: "
+        label="Main Ingredient:"
         value={mealName}
         onChange={setMealName}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
-        fetchDataFunction={fetchNames}
-        cacheKey="names"
       />
       <div className="load-error">
         {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
@@ -83,4 +80,4 @@ const MealName = () => {
   );
 };
 
-export default MealName;
+export default RecipeList;
