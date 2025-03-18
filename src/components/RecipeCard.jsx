@@ -1,5 +1,7 @@
 //src/components/RecipeCard.jsx
 import { useEffect, useState } from 'react';
+import LoadingIndicator from './LoadingIndicator';
+import Error from './ErrorMessage';
 import './recipeCard.css';
 
 const RecipeCard = ({ recepie }) => {
@@ -68,9 +70,8 @@ const RecipeCard = ({ recepie }) => {
   return (
     <>
       <div className="recipe-error-loading">
-        {/* Show loading and error messages */}
-        {loading && <p style={{ color: 'blue' }}>Loading recipe details...</p>}
-        {error && <p style={{ color: 'orange' }}>{error}</p>}
+        <LoadingIndicator loading={loading} />
+        <Error error={error} />
       </div>
       <div className="recipe-card">
         <h2 className="recipe-title">{strMeal}</h2>

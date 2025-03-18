@@ -73,7 +73,7 @@ const RecipeList = () => {
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
         {/* {Object.keys(recipe).length > 0 ? (
-          <RecipeCard key={recipe.idMeal} recepie={recipe} />
+          <RecipeCard key={recipe.idMeal} recipe={recipe} />
         ) : (
           <p>No recipe found</p>
         )} */}
