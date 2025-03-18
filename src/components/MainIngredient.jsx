@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
+import LoadingIndicator from './LoadingIndicator';
+import ErrorMessage from './ErrorMessage';
 import './recipeList.css';
+
 
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState([]);
@@ -68,10 +71,8 @@ const MainIngredient = () => {
         cacheKey="ingredients"
       />
       <div className="load-error">
-        {loading && (
-          <p style={{ color: 'blue' }}>Loading based on main ingredient ....</p>
-        )}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <LoadingIndicator isLoading={loading} />
+        <ErrorMessage error={error} />
       </div>
       {/* Display recipes */}
       <div className="recipe-list">

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import fetchCuisines from '../utils/cuisinesApi';
+import LoadingIndicator from './LoadingIndicator';
+import ErrorMessage from './ErrorMessage';
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
@@ -60,10 +62,8 @@ const Cuisine = () => {
         cacheKey="cuisines"
       />
       <div className="load-error">
-        {loading && (
-          <p style={{ color: 'blue' }}>Loading based on cuisine ....</p>
-        )}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <LoadingIndicator isLoading={loading} />
+        <ErrorMessage error={error} />
       </div>
       {/* Display recipes */}
       <div className="recipe-list">

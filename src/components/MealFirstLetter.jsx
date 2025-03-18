@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
+import LoadingIndicator from './LoadingIndicator';
+import ErrorMessage from './ErrorMessage';
 
 const MealFirstLetter = () => {
   const [mealStart, setMealStart] = useState('a');
@@ -52,8 +54,8 @@ const MealFirstLetter = () => {
         placeholder="Enter Meal Name"
       />
       <div className="load-error">
-        {loading && <p style={{ color: 'blue' }}>Loading recipes...</p>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <LoadingIndicator isLoading={loading} />
+        <ErrorMessage error={error} />
       </div>
 
       {/* Display recipes */}

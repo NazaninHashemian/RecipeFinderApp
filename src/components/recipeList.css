@@ -65,3 +65,65 @@
   margin-left: 10px; /* Space between button and input field */
   display: flex;
 }
+
+/* Media query for screens smaller than 420px */
+@media (max-width: 420px) {
+  /* Input Field */
+  .input {
+    padding: 8px;
+    font-size: 0.78rem;
+    width: 250px; /* Fixed width for the input field */
+  }
+  .clear-btn {
+    padding: 8px 6px;
+    font-size: 0.78rem;
+  }
+}
+
+/* Media query for screens smaller than 380px */
+@media (max-width: 380px) {
+  /* Input Field */
+  .input {
+    padding: 6px;
+    font-size: 0.7rem;
+    width: 200px; /* Fixed width for the input field */
+  }
+  .clear-btn {
+    padding: 6px 5px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Media query for screens smaller than 330px */
+@media (max-width: 330px) {
+  /* Input Field */
+  .input {
+    padding: 4px;
+    font-size: 0.65rem;
+    width: 180px; /* Fixed width for the input field */
+  }
+  .clear-btn {
+    padding: 4px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Media query for screens smaller than 330px */
+@media (max-width: 300px) {
+  /* Input Field */
+  .input {
+    padding: 4px;
+    border: 1px solid #ddd;
+    font-size: 0.65rem;
+    width: 170px; /* Fixed width for the input field */
+  }
+  .clear-btn {
+    padding: 3.9px;
+    font-size: 0.61rem;
+  }
+
+  /* Change content for clear-btn */
+  .clear-btn {
+    content: 'X'; /* Directly set button content to 'X' */
+  }
+}
