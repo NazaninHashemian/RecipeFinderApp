@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from 'react-router-dom';
 import MainIngredient from './components/MainIngredient';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
@@ -7,34 +12,35 @@ import Cuisine from './components/Cuisine';
 import Random from './components/Random';
 import './app.css';
 
+const activeHandling = ({ isActive }) => (isActive ? 'active' : '');
 function App() {
   return (
     <Router>
       <div className="nav">
-        <Link to="/name">
+        <NavLink to="/name" className={activeHandling}>
           {' '}
           <button>Name</button>{' '}
-        </Link>
-        <Link to="/first-letter">
+        </NavLink>
+        <NavLink to="/first-letter" className={activeHandling}>
           {' '}
           <button>First Letter</button>{' '}
-        </Link>
-        <Link to="/ingredient">
+        </NavLink>
+        <NavLink to="/ingredient" className={activeHandling}>
           {' '}
           <button>Ingredient</button>{' '}
-        </Link>
-        <Link to="/cuisine">
+        </NavLink>
+        <NavLink to="/cuisine" className={activeHandling}>
           {' '}
           <button>Cuisine</button>{' '}
-        </Link>
-        <Link to="/random">
+        </NavLink>
+        <NavLink to="/random" className={activeHandling}>
           {' '}
           <button>Random</button>{' '}
-        </Link>
-        <Link to="/category">
+        </NavLink>
+        <NavLink to="/category" className={activeHandling}>
           {' '}
           <button>Category</button>{' '}
-        </Link>
+        </NavLink>
       </div>
 
       <Routes>
