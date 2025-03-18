@@ -9,6 +9,7 @@ const RecipeCard = ({ recepie }) => {
   const [showFullInstructions, setShowFullInstructions] = useState(false);
   const [showFullIngredients, setShowFullIngredients] = useState(false);
 
+  const { idMeal, strMealThumb, strMeal } = recepie;
   useEffect(() => {
     const fetchRecipeDetail = async () => {
       try {
@@ -16,7 +17,7 @@ const RecipeCard = ({ recepie }) => {
         setError(null);
 
         const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recepie.idMeal}`
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
         );
         const data = await response.json();
 
@@ -31,7 +32,7 @@ const RecipeCard = ({ recepie }) => {
     };
 
     fetchRecipeDetail();
-  }, [recepie.idMeal]);
+  }, [idMeal]);
 
   const handleToggleInstructions = () => {
     setShowFullInstructions((prevState) => !prevState);
@@ -72,13 +73,9 @@ const RecipeCard = ({ recepie }) => {
         {error && <p style={{ color: 'orange' }}>{error}</p>}
       </div>
       <div className="recipe-card">
-        <h2 className="recipe-title">{recepie.strMeal}</h2>
+        <h2 className="recipe-title">{strMeal}</h2>
         <div className="recipe-content">
-          <img
-            className="recipe-image"
-            src={recepie.strMealThumb}
-            alt={recepie.strMeal}
-          />
+          <img className="recipe-image" src={strMealThumb} alt={strMeal} />
 
           <div className="recipe-detail">
             {/* Display Area section */}

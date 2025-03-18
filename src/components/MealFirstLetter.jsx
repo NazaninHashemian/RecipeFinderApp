@@ -12,7 +12,7 @@ const MealFirstLetter = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     if (!mealStart.trim()) return;
-    const fetchMealByFuirstLetter = async () => {
+    const fetchMealByFirstLetter = async () => {
       try {
         setLoading(true);
         setError(null);
@@ -34,7 +34,7 @@ const MealFirstLetter = () => {
         setLoading(false);
       }
     };
-    fetchMealByFuirstLetter();
+    fetchMealByFirstLetter();
   }, [mealStart]);
 
   const handleClearSearch = () => {

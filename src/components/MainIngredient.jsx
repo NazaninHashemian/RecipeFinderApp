@@ -7,7 +7,6 @@ import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import './recipeList.css';
 
-
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState([]);
   const [ingredient, setIngredient] = useState('chicken_breast');
