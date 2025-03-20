@@ -11,7 +11,7 @@ const MealFirstLetter = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   useEffect(() => {
-    if (!mealStart.trim()) return;
+    if (!mealStart.trim() || !/^[a-zA-Z]$/.test(mealStart)) return; 
     const fetchMealByFirstLetter = async () => {
       try {
         setLoading(true);
