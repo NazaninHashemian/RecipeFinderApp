@@ -9,8 +9,8 @@ const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [detail, setDetail] = useState(null);
-  const [showFullInstructions, setShowFullInstructions] = useState(false);
-  const [showFullIngredients, setShowFullIngredients] = useState(false);
+  // const [showFullInstructions, setShowFullInstructions] = useState(false);
+  // const [showFullIngredients, setShowFullIngredients] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie;
@@ -38,31 +38,31 @@ const RecipeCard = ({ recepie }) => {
     fetchRecipeDetail();
   }, [idMeal]);
 
-  const handleToggleInstructions = () => {
-    setShowFullInstructions((prevState) => !prevState);
-  };
-  const handleToggleIngredients = () => {
-    setShowFullIngredients((prevState) => !prevState);
-  };
+  // const handleToggleInstructions = () => {
+  //   setShowFullInstructions((prevState) => !prevState);
+  // };
+  // const handleToggleIngredients = () => {
+  //   setShowFullIngredients((prevState) => !prevState);
+  // };
 
-  //  Function to get ingredients
-  const getIngredients = () => {
-    let ingredients = [];
-    const maxIngredientsCount = 20;
-    for (let i = 1; i <= maxIngredientsCount; i++) {
-      const ingredient = detail[`strIngredient${i}`];
-      if (ingredient && ingredient.trim()) {
-        ingredients.push(`${ingredient}`);
-      }
-    }
-    return ingredients;
-  };
+  // //  Function to get ingredients
+  // const getIngredients = () => {
+  //   let ingredients = [];
+  //   const maxIngredientsCount = 20;
+  //   for (let i = 1; i <= maxIngredientsCount; i++) {
+  //     const ingredient = detail[`strIngredient${i}`];
+  //     if (ingredient && ingredient.trim()) {
+  //       ingredients.push(`${ingredient}`);
+  //     }
+  //   }
+  //   return ingredients;
+  // };
 
   // Show only the first 3 ingredients initially
-  const getIngredientsToShow = () => {
-    const ingredients = getIngredients();
-    return showFullIngredients ? ingredients : ingredients.slice(0, 3); // Toggle between full or first 3 ingredients
-  };
+  // const getIngredientsToShow = () => {
+  //   const ingredients = getIngredients();
+  //   return showFullIngredients ? ingredients : ingredients.slice(0, 3); // Toggle between full or first 3 ingredients
+  // };
 
   //  Function to get ingredients
   const getArea = () => {
@@ -90,7 +90,6 @@ const RecipeCard = ({ recepie }) => {
       <h2 
         className="recipe-title" 
         onClick={handleImageClick} 
-        style={{ cursor: 'pointer' }} 
         style={{ cursor: 'pointer' }} 
         title="Click to view recipe details"  // Tooltip text
       >
