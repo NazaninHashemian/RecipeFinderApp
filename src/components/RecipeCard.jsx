@@ -87,7 +87,16 @@ const RecipeCard = ({ recepie }) => {
         <Error error={error} />
       </div>
       <div className="recipe-card">
-        <h2 className="recipe-title">{strMeal}</h2>
+      <h2 
+        className="recipe-title" 
+        onClick={handleImageClick} 
+        style={{ cursor: 'pointer' }} 
+        style={{ cursor: 'pointer' }} 
+        title="Click to view recipe details"  // Tooltip text
+      >
+        {strMeal}
+      </h2>
+
         <div className="recipe-content">
           <img 
             className="recipe-image" 
