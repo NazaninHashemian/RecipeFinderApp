@@ -112,50 +112,8 @@ const RecipeCard = ({ recepie }) => {
                   ? `Category: ${detail.strCategory}`
                   : 'category not available'}
               </p>
-            </div>
-
-            <div className="ingredients">
-              {/* <h3>Ingredients:</h3> */}
-              <p className="ingredients-list">
-                {detail && getIngredients().length > 0
-                  ? getIngredientsToShow().join(', ')
-                  : 'No ingredients available.'}
-              </p>
-              {/* Show More / Show Less button */}
-              {detail && (
-                <button
-                  onClick={handleToggleIngredients}
-                  className="show-more-btn ingredient"
-                >
-                  {showFullIngredients ? 'less' : 'More'}
-                </button>
-              )}
-            </div>
-
-            {/* Display recipe instructions */}
-            {detail ? (
-              <p
-                className={
-                  showFullInstructions
-                    ? 'full-instructions'
-                    : 'truncated-instructions'
-                }
-              >
-                {`${detail.strInstructions}`}
-              </p>
-            ) : (
-              <p>Instructions not available.</p>
-            )}
-
-            {/* Show More / Show Less button */}
-            {detail && (
-              <button
-                onClick={handleToggleInstructions}
-                className="show-more-btn"
-              >
-                {showFullInstructions ? 'less' : 'More'}
-              </button>
-            )}
+            </div>           
+            
           </div>
         </div>
       </div>
