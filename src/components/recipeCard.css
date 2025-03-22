@@ -23,6 +23,7 @@
   max-width: 150px;
   width: 100%;
   height: auto;
+  cursor: pointer; 
 }
 
 .full-instructions {

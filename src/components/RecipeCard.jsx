@@ -94,6 +94,7 @@ const RecipeCard = ({ recepie }) => {
             src={strMealThumb} 
             alt={strMeal} 
             onClick={handleImageClick}// Open the modal when the image is clicked
+            title="Click to view recipe details"  // Tooltip text
           />
 
           <div className="recipe-detail">
