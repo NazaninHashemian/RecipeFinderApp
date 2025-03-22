@@ -1,4 +1,4 @@
-/* src/components/Modal.css */
+/* Modal Overlay - covers the entire screen */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -9,23 +9,99 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
   }
   
+  /* Modal Content */
   .modal-content {
     background: white;
     padding: 20px;
     border-radius: 5px;
     width: 80%;
     max-width: 600px;
-    overflow-y: auto;
+    max-height: 80vh; /* Limit the modal height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    position: relative;
+    z-index: 1001;
   }
   
-  button {
-    background-color: #007bff;
+  /* Styling for the modal image */
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Limit image height */
+    margin-bottom: 15px;
+  }
+  
+  /* Modal heading (Recipe name) */
+  .modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Modal Detail Section */
+  .modal-detail {
+    margin-bottom: 20px;
+  }
+  
+  .modal-detail p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  /* Styling for the ingredient list */
+  .modal-detail ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  
+  .modal-detail li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  /* Styling for the instructions */
+  .modal-detail h3 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+  
+  .modal-detail p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  /* Styling for the close button */
+  .modal-content button {
+    background-color: #ff5c5c;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .modal-content button:hover {
+    background-color: #e04a4a;
+  }
+  
+  /* Prevent the modal from being closed when clicked inside */
+  .modal-content {
+    position: relative;
+  }
+  
+  .modal-overlay {
+    pointer-events: auto; /* Allow clicks on the overlay */
+  }
+  
+  .modal-content {
+    pointer-events: all; /* Block clicks inside the modal from closing it */
   }
   

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import LoadingIndicator from './LoadingIndicator';
 import Error from './ErrorMessage';
 import './RecipeCard.css';
+import Modal from './Modal';
 
 const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);
@@ -10,6 +11,7 @@ const RecipeCard = ({ recepie }) => {
   const [detail, setDetail] = useState(null);
   const [showFullInstructions, setShowFullInstructions] = useState(false);
   const [showFullIngredients, setShowFullIngredients] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie;
   useEffect(() => {
@@ -67,6 +69,17 @@ const RecipeCard = ({ recepie }) => {
     const area = detail[`strArea`];
     return area;
   };
+
+  // Function to open modal when image is clicked
+  const handleImageClick = () => {
+    setIsModalOpen(true); // Open the modal
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
   return (
     <>
       <div className="recipe-error-loading">
@@ -76,7 +89,12 @@ const RecipeCard = ({ recepie }) => {
       <div className="recipe-card">
         <h2 className="recipe-title">{strMeal}</h2>
         <div className="recipe-content">
-          <img className="recipe-image" src={strMealThumb} alt={strMeal} />
+          <img 
+            className="recipe-image" 
+            src={strMealThumb} 
+            alt={strMeal} 
+            onClick={handleImageClick}// Open the modal when the image is clicked
+          />
 
           <div className="recipe-detail">
             {/* Display Area section */}
@@ -141,6 +159,10 @@ const RecipeCard = ({ recepie }) => {
           </div>
         </div>
       </div>
+       {/* Conditional Rendering of the Modal */}
+       {isModalOpen && detail && (
+        <Modal recipe={detail} onClose={closeModal} />
+      )}
     </>
   );
 };
