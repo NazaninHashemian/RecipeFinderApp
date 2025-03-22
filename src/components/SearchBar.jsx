@@ -9,6 +9,7 @@ const SearchBar = ({
   placeholder,
   fetchDataFunction,
   cacheKey,
+  maxLength, //  Add maxLength prop
 }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -59,6 +60,7 @@ const SearchBar = ({
         placeholder={placeholder}
         className="input"
         onFocus={() => setIsDropdownVisible(true)} // Show dropdown when the input is focused
+        maxLength={maxLength} // Allow components to control length
       />
       {/* Dropdown for filtered cuisines */}
       {isDropdownVisible && filteredItems.length > 0 && (

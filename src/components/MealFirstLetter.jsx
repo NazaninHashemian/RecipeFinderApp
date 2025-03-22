@@ -52,6 +52,7 @@ const MealFirstLetter = () => {
         onChange={setMealStart}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
+        maxLength={1} // Only restricts input in this component
       />
       <div className="load-error">
         <LoadingIndicator isLoading={loading} />
