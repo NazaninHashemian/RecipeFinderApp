@@ -32,7 +32,7 @@
 /* For smaller screens, truncate the instructions */
 .truncated-instructions {
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to 5 lines */
+  line-clamp: 3; /* Limit to 5 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

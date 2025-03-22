@@ -10,7 +10,7 @@ import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories';
 import Cuisine from './components/Cuisine';
 import Random from './components/Random';
-import './app.css';
+import './App.css';
 
 const activeHandling = ({ isActive }) => (isActive ? 'active' : '');
 function App() {

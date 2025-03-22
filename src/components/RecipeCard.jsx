@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import LoadingIndicator from './LoadingIndicator';
 import Error from './ErrorMessage';
-import './recipeCard.css';
+import './RecipeCard.css';
 
 const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);

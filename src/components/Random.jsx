@@ -1,7 +1,7 @@
 // src/components/Random.jsx
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
-import './recipeList.css';
+import './RecipeList.css';
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState([]);

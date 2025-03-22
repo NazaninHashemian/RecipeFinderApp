@@ -4,7 +4,7 @@ import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
-import './recipeList.css';
+import './RecipeList.css';
 
 const RecipeList = () => {
   const [mealName, setMealName] = useState('soup');
