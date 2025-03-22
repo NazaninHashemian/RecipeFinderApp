@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
-import './recipeList.css';
+import './RecipeList.css';
 
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState([]);

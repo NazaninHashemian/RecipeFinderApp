@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './searchBar.css';
+import './SearchBar.css';
 
 const SearchBar = ({
   label,
