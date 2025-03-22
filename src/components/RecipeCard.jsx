@@ -11,8 +11,9 @@ const RecipeCard = ({ recepie }) => {
   const [detail, setDetail] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
-  const { idMeal, strMealThumb, strMeal } = recepie;
+  const { idMeal, strMealThumb, strMeal } = recepie || {}; // Prevents errors if recipe is undefined;
   useEffect(() => {
+    if (!idMeal) return;  // Prevent fetching if idMeal is not available
     const fetchRecipeDetail = async () => {
       try {
         setLoading(true);
@@ -30,6 +31,8 @@ const RecipeCard = ({ recepie }) => {
       } catch (error) {
         setError(error.message);
         setLoading(false);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -43,11 +46,8 @@ const RecipeCard = ({ recepie }) => {
   //   setShowFullIngredients((prevState) => !prevState);
   // };
 
-  //  Function to get ingredients
-  const getArea = () => {
-    const area = detail[`strArea`];
-    return area;
-  };
+   // Function to get the area of origin
+   const getArea = () => detail?.strArea || 'Area not available';
 
   // Function to open modal when image is clicked
   const handleImageClick = () => {
