@@ -9,8 +9,6 @@ const RecipeCard = ({ recepie }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [detail, setDetail] = useState(null);
-  // const [showFullInstructions, setShowFullInstructions] = useState(false);
-  // const [showFullIngredients, setShowFullIngredients] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie;
@@ -43,25 +41,6 @@ const RecipeCard = ({ recepie }) => {
   // };
   // const handleToggleIngredients = () => {
   //   setShowFullIngredients((prevState) => !prevState);
-  // };
-
-  // //  Function to get ingredients
-  // const getIngredients = () => {
-  //   let ingredients = [];
-  //   const maxIngredientsCount = 20;
-  //   for (let i = 1; i <= maxIngredientsCount; i++) {
-  //     const ingredient = detail[`strIngredient${i}`];
-  //     if (ingredient && ingredient.trim()) {
-  //       ingredients.push(`${ingredient}`);
-  //     }
-  //   }
-  //   return ingredients;
-  // };
-
-  // Show only the first 3 ingredients initially
-  // const getIngredientsToShow = () => {
-  //   const ingredients = getIngredients();
-  //   return showFullIngredients ? ingredients : ingredients.slice(0, 3); // Toggle between full or first 3 ingredients
   // };
 
   //  Function to get ingredients
