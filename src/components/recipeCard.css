@@ -2,7 +2,7 @@
 .recipe-card {
   border: 1px solid #ddd;
   padding: 5px;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;

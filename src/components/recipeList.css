@@ -4,9 +4,8 @@
   flex-wrap: wrap;  /* Allow items to wrap to the next line */
   justify-content: center; /* Center items horizontally */
   gap: 10px;  /* Adjust spacing between the items */
-  padding: 0; /* Updated: Remove any extra padding */
-  margin: 0; /* Updated: Remove any extra margin */
   box-sizing: border-box; 
+  align-items: flex-start; /* Align items to the top of the container */
 }
 
 #main-heading {
