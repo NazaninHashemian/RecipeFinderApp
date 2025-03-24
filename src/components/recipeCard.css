@@ -2,10 +2,10 @@
 .recipe-card {
   border: 1px solid #ddd;
   padding: 15px;
-  margin: 8px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   background: #fff;
 }
 
@@ -26,17 +26,6 @@
   cursor: pointer; 
 }
 
-.full-instructions {
-  display: block;
-}
-
-/* For smaller screens, truncate the instructions */
-.truncated-instructions {
-  display: -webkit-box;
-  line-clamp: 3; /* Limit to 5 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 .show-more-btn {
   background: none;
   border: none;
@@ -49,26 +38,19 @@
 
 /* Show full instructions on larger screens and hide the "Show More" button */
 @media (min-width: 768px) {
-  .truncated-instructions {
-    display: block; /* Show full instructions on larger screens */
-  }
+
 
   .show-more-btn {
     display: none; /* Hide the "Show More" button on larger screens */
   }
-  .ingredient {
-    display: block;
-  }
+
 }
 
 /* On smaller screens, ensure the full instructions are visible */
 @media (max-width: 500px) {
-  /* Hide truncated text on small screens */
-  .truncated-instructions {
-    display: none; /* Hide truncated instructions on smaller screens */
-  }
+  .recipe-card {
+    padding: 10px;
+    margin: 10px;
 
-  .full-instructions {
-    display: block; /* Show full instructions on smaller screens */
   }
 }

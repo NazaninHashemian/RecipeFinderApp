@@ -67,15 +67,15 @@
 }
 
 /* Media query for screens smaller than 420px */
-@media (max-width: 420px) {
+@media (max-width: 490px) {
   /* Input Field */
   .input {
-    padding: 8px;
+    padding: 5px;
     font-size: 0.78rem;
     width: 250px; /* Fixed width for the input field */
   }
   .clear-btn {
-    padding: 8px 6px;
+    padding: 5px;
     font-size: 0.78rem;
   }
 }

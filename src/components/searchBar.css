@@ -1,10 +1,10 @@
 /* Ensure the search-container div has position relative for dropdown positioning */
 .search-container {
   position: relative; /* Allow the dropdown to be positioned relative to this container */
-  padding-left: 12px;
+  padding-left: 9px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
   width: 100%;
@@ -38,4 +38,39 @@
 
 .dropdown li:hover {
   background-color: #f0f0f0;
+}
+
+/* Media query for screens smaller than 420px */
+@media (max-width: 490px) {
+  /* Input Field */
+  label {
+    font-size: .95rem;
+  }
+}
+
+@media (max-width: 440px) {
+  /* Input Field */
+  label {
+    font-size: .63rem;
+  }
+}
+@media (max-width: 403px) {
+  /* Input Field */
+  label {
+    font-size: .55rem;
+  }
+}
+
+@media (max-width: 393px) {
+  /* Input Field */
+  label {
+    font-size: .5rem;
+  }
+}
+
+@media (max-width: 383px) {
+  /* Input Field */
+  label {
+    font-size: .48rem;
+  }
 }
