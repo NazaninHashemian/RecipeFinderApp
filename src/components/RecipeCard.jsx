@@ -39,13 +39,6 @@ const RecipeCard = ({ recepie }) => {
     fetchRecipeDetail();
   }, [idMeal]);
 
-  // const handleToggleInstructions = () => {
-  //   setShowFullInstructions((prevState) => !prevState);
-  // };
-  // const handleToggleIngredients = () => {
-  //   setShowFullIngredients((prevState) => !prevState);
-  // };
-
    // Function to get the area of origin
    const getArea = () => detail?.strArea || 'Area not available';
 
