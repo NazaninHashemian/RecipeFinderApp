@@ -1,4 +1,11 @@
 /* Recipe List Styles */
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;  /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px;  /* Adjust spacing between the items */
+}
+
 #main-heading {
   padding-left: 10px;
 }
@@ -66,7 +73,13 @@
   display: flex;
 }
 
-/* Media query for screens smaller than 420px */
+/* Media query for screens smaller than 490px */
+@media (max-width: 900px) {
+  .recipe-list {
+    gap: 5px;  /* Adjust spacing between the items */
+  }
+}
+/* Media query for screens smaller than 490px */
 @media (max-width: 490px) {
   /* Input Field */
   .input {
@@ -77,6 +90,9 @@
   .clear-btn {
     padding: 5px;
     font-size: 0.78rem;
+  }
+  .recipe-list {
+    gap: 5px;  /* Adjust spacing between the items */
   }
 }
 
@@ -108,7 +124,7 @@
   }
 }
 
-/* Media query for screens smaller than 330px */
+/* Media query for screens smaller than 300px */
 @media (max-width: 300px) {
   /* Input Field */
   .input {
@@ -122,8 +138,6 @@
     font-size: 0.61rem;
   }
 
-  /* Change content for clear-btn */
-  .clear-btn {
-    content: 'X'; /* Directly set button content to 'X' */
-  }
 }
+
+

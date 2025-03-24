@@ -7,18 +7,14 @@
   flex-direction: column;
   align-items: center;
   background: #fff;
+  width: 100%;  /* Take full width on smaller screens */
+  max-width: 300px; /* Limits the max size */
 }
 
-.recipe-content {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 100%;
-  gap: 15px;
-}
 .recipe-error-loading {
   padding-left: 10px;
 }
+
 .recipe-image {
   max-width: 150px;
   width: 100%;
@@ -26,31 +22,4 @@
   cursor: pointer; 
 }
 
-.show-more-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
-.show-more-btn:hover {
-  color: #33f;
-}
-
-/* Show full instructions on larger screens and hide the "Show More" button */
-@media (min-width: 768px) {
-
-
-  .show-more-btn {
-    display: none; /* Hide the "Show More" button on larger screens */
-  }
-
-}
-
-/* On smaller screens, ensure the full instructions are visible */
-@media (max-width: 500px) {
-  .recipe-card {
-    padding: 10px;
-    margin: 10px;
-
-  }
-}
