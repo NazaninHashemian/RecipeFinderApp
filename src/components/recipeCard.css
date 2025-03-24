@@ -1,14 +1,15 @@
 /* RecipeCard.css */
 .recipe-card {
   border: 1px solid #ddd;
-  padding: 15px;
-  margin: 25px;
+  padding: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #fff;
   width: 100%;  /* Take full width on smaller screens */
-  max-width: 300px; /* Limits the max size */
+  max-width: 250px; /* Limits the max size */
+  box-sizing: border-box; 
 }
 
 .recipe-error-loading {
@@ -16,10 +17,13 @@
 }
 
 .recipe-image {
-  max-width: 150px;
+  max-width: 200px;
   width: 100%;
   height: auto;
   cursor: pointer; 
 }
 
+.recipe-title {
+  text-align: center;
+}
 

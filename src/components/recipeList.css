@@ -4,6 +4,9 @@
   flex-wrap: wrap;  /* Allow items to wrap to the next line */
   justify-content: center; /* Center items horizontally */
   gap: 10px;  /* Adjust spacing between the items */
+  padding: 0; /* Updated: Remove any extra padding */
+  margin: 0; /* Updated: Remove any extra margin */
+  box-sizing: border-box; 
 }
 
 #main-heading {
@@ -73,12 +76,7 @@
   display: flex;
 }
 
-/* Media query for screens smaller than 490px */
-@media (max-width: 900px) {
-  .recipe-list {
-    gap: 5px;  /* Adjust spacing between the items */
-  }
-}
+
 /* Media query for screens smaller than 490px */
 @media (max-width: 490px) {
   /* Input Field */
@@ -92,7 +90,7 @@
     font-size: 0.78rem;
   }
   .recipe-list {
-    gap: 5px;  /* Adjust spacing between the items */
+    gap: 1px;  /* Adjust spacing between the items */
   }
 }
 
