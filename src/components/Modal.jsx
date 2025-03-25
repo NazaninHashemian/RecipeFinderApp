@@ -37,7 +37,7 @@ const Modal = ({ recipe, onClose }) => {
           <h3>Instructions:</h3>
           <p>{strInstructions}</p>
         </div>
-        <button onClick={onClose}>Close</button>
+        <button onClick={onClose}>X</button>
       </div>
     </div>
   );
