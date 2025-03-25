@@ -21,7 +21,10 @@ const Modal = ({ recipe, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>{strMeal}</h2>
+        <div className='modal-header'>
+          <h2>{strMeal}</h2>
+          <button className="close-button" onClick={onClose}>X</button>
+        </div>
         <img src={strMealThumb} alt={strMeal} />
         <div className="modal-detail">
           <div>
@@ -37,7 +40,7 @@ const Modal = ({ recipe, onClose }) => {
           <h3>Instructions:</h3>
           <p>{strInstructions}</p>
         </div>
-        <button onClick={onClose}>X</button>
+        
       </div>
     </div>
   );
