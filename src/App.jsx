@@ -18,28 +18,27 @@ function App() {
     <Router>
       <div className="nav">
         <NavLink to="/name" className={activeHandling}>
-          {' '}
-          <button>Name</button>{' '}
+          <button>Name</button>
         </NavLink>
+
         <NavLink to="/first-letter" className={activeHandling}>
-          {' '}
-          <button>First Letter</button>{' '}
+          <button>First Letter</button>
         </NavLink>
+
         <NavLink to="/ingredient" className={activeHandling}>
-          {' '}
-          <button>Ingredient</button>{' '}
+          <button>Ingredient</button>
         </NavLink>
-        <NavLink to="/cuisine" className={activeHandling}>
-          {' '}
-          <button>Cuisine</button>{' '}
+
+        <NavLink to="/cuisine" className={activeHandling}>         
+          <button>Cuisine</button>
         </NavLink>
-        <NavLink to="/random" className={activeHandling}>
-          {' '}
-          <button>Random</button>{' '}
+
+        <NavLink to="/random" className={activeHandling}>        
+          <button>Random</button>
         </NavLink>
-        <NavLink to="/category" className={activeHandling}>
-          {' '}
-          <button>Category</button>{' '}
+        
+        <NavLink to="/category" className={activeHandling}>         
+          <button>Category</button>
         </NavLink>
       </div>
 

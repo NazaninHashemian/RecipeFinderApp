@@ -53,13 +53,13 @@ const Cuisine = () => {
     <div>
       <h1 id="main-heading">{cuisine || 'No Cuisine'} Recipes</h1>
       <SearchBar
-        label="Cuisine: "
-        value={cuisine}
-        onChange={setCuisine}
-        onClear={handleClearSearch}
-        placeholder="Enter Cuisine Name"
-        fetchDataFunction={fetchCuisines}
-        cacheKey="cuisines"
+        label= "Cuisine: "
+        value= {cuisine}
+        onChange= {setCuisine}
+        onClear= {handleClearSearch}
+        placeholder= "Enter Cuisine Name"
+        fetchDataFunction= {fetchCuisines}
+        cacheKey=  "cuisines"
       />
       <div className="load-error">
         <LoadingIndicator isLoading={loading} />
