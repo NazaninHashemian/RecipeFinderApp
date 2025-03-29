@@ -2,9 +2,10 @@
 .category-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   flex-direction: column; /* Ensure the heading is always on top */
   gap: 10px; 
+  justify-content: flex-start;
+  align-items: flex-start; 
 }
 .category-list h1 {
   width: 100%; /* Force the heading to take the full width */
@@ -22,6 +23,11 @@
   max-width: 300px; /* Limit max width to prevent oversized elements */
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  height: 400px; 
+
+
+  display: flex; /*  Allows content inside to be flexible */
+  flex-direction: column; /*  Stack elements inside */
 }
 
 /* Add a hover effect for each category */
@@ -35,6 +41,18 @@
   height: auto;
   border-radius: 4px;
   margin-bottom: 10px;
+}
+
+/*  Category description (Fixed typo & added scroll) */
+.category-list p {
+  /* font-size: 0.9em; */
+  color: #222;
+  text-align: left;
+  margin-top: 0;
+  
+  flex-grow: 1; /*  Makes it take available space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 200px; /* Limits height */
 }
 
 /* Responsive design for larger screens */
