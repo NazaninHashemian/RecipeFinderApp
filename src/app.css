@@ -1,49 +1,70 @@
 /* App.css */
+
+/* Default light mode styles */
 body {
   background-color: #f8f9fa;
+  color: #000;
   font-family: 'Roboto', sans-serif;
+  transition: background-color .3s, color .3s;
 }
+
 .nav {
   display: flex;
   justify-content: center;
   gap: 1.8%;
 }
+
 .nav button {
   padding: 15% 0.3%;
   width: 6rem;
   font-size: 1em;
-  /* margin: 0 10px; */
   cursor: pointer;
   border: none;
   background: none;
 }
+
 .nav button:hover {
   background-color: #f0f0f0;
 }
-.nav .active button{
-  background-color: #007bff;
+
+/* Light mode active button */
+.nav .active button {
+  background-color: #007bff;  /* Active button color in light mode */
+  color: white;
+}
+
+/* Dark mode active button */
+body.dark-mode .nav .active button {
+  background-color: #1e2a8a;  /* Darker blue for active button in dark mode */
   color: white;
 }
 
 /* Dark mode styles */
-body.dark-mode {  /*  Dark mode background and text color */
+body.dark-mode {
   background-color: #121212;
   color: #fff;
 }
 
-body.dark-mode .nav button {  /* Dark mode nav button styling */
-  background-color: #333;
+body.dark-mode .nav button {
+  background-color: #111;
   color: white;
 }
 
-body.dark-mode .nav button:hover {  /* Dark mode nav button hover effect */
+body.dark-mode .nav button:hover {
   background-color: #444;
 }
 
-/* Other styles for light mode, etc. */
-
-
-
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
@@ -57,6 +78,7 @@ body.dark-mode .nav button:hover {  /* Dark mode nav button hover effect */
     width: 4.8rem;
   }
 }
+
 /* Media query for screens smaller than 480px */
 @media (max-width: 480px) {
   .nav {
