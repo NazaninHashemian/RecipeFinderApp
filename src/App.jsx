@@ -50,8 +50,8 @@ function App() {
             <button>Random</button>
           </NavLink>
 
-          <NavLink to="/category" className={activeHandling}>
-            <button>Category</button>
+          <NavLink to="/categories" className={activeHandling}>
+            <button>Categories</button>
           </NavLink>
         </div>
 
@@ -65,7 +65,7 @@ function App() {
           <Route path="/ingredient" element={<MainIngredient />} />
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="/random" element={<Random />} />
-          <Route path="/category" element={<Categories />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="*" element={<MealName />} />
         </Routes>
       </div>
