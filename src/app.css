@@ -25,6 +25,26 @@ body {
   color: white;
 }
 
+/* Dark mode styles */
+body.dark-mode {  /*  Dark mode background and text color */
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode .nav button {  /* Dark mode nav button styling */
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .nav button:hover {  /* Dark mode nav button hover effect */
+  background-color: #444;
+}
+
+/* Other styles for light mode, etc. */
+
+
+
+
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .nav {

@@ -4,6 +4,7 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
+import { useState } from 'react';
 import MainIngredient from './components/MainIngredient';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
@@ -13,7 +14,22 @@ import Random from './components/Random';
 import './App.css';
 
 const activeHandling = ({ isActive }) => (isActive ? 'active' : '');
+
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);  // State for dark mode
+
+  // Function to toggle dark/light mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);  // Toggle the dark mode state
+  };
+
+  // Apply or remove the dark-mode class on the body tag
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+
   return (
     <Router>
       <div className="nav">
@@ -41,6 +57,10 @@ function App() {
           <button>Category</button>
         </NavLink>
       </div>
+
+      <button className='dark-mode-toggle' onClick={toggleDarkMode}>
+        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
 
       <Routes>
         <Route path="/name" element={<MealName />} />

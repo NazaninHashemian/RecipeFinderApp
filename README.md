@@ -29,7 +29,8 @@ To run this project locally, follow these steps:
 3- Open index.html in your browser. No additional setup is needed since it's a simple front-end project.
 
 
-How It Works
+How It Works:
+
 The app allows users to search for recipes using an input field.
 It fetches data from the MealDB API based on the user’s search query.
 The fetched data includes recipe names, images, categories, and areas of origin.
