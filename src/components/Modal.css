@@ -114,3 +114,14 @@
     align-items: center;
     border-bottom: 1px solid #ddd;
   }
+
+/* Dark mode support */
+body.dark-mode .modal-content {
+  background: #222; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+body.dark-mode .modal-header {
+  background: #222; /* Match modal background */
+  border-bottom: 1px solid #444;
+}

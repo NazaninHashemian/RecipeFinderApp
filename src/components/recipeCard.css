@@ -17,9 +17,15 @@
   flex-direction: column;
   align-items: center;
   background: #fff;
+  color: #000;
   width: 100%;  /* Take full width on smaller screens */
   max-width: 250px; /* Limits the max size */
   box-sizing: border-box; 
+}
+
+body.dark-mode .recipe-card {
+  background: #222; /* Dark mode background */
+  color: #fff; /* Ensure text is visible in dark mode */
 }
 
 .recipe-image {
