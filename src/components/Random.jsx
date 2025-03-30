@@ -55,7 +55,7 @@ const RandomRecipe = () => {
       </button>
       <div className="load-error">
         {loading && (
-          <p style={{ color: 'blue' }}>Loading a random recipe....</p>
+          <p style={{ color: 'blue' }}>Loading....</p>
         )}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>

@@ -54,19 +54,20 @@ const RecipeCard = ({ recepie }) => {
 
   return (
     <>
-      <div className="recipe-error-loading">
+      {/* <div className="recipe-error-loading">
         <LoadingIndicator loading={loading} />
         <Error error={error} />
-      </div>
+      </div> */}
+
       <div className="recipe-card">
-      <h2 
+        <h2 
         className="recipe-title" 
         onClick={handleImageClick} 
         style={{ cursor: 'pointer' }} 
         title="Click to view recipe details"  // Tooltip text
       >
         {strMeal}
-      </h2>
+        </h2>
 
         <div className="recipe-content">
           <img 
@@ -98,6 +99,7 @@ const RecipeCard = ({ recepie }) => {
           </div>
         </div>
       </div>
+
        {/* Conditional Rendering of the Modal */}
        {isModalOpen && detail && (
         <Modal recipe={detail} onClose={closeModal} />

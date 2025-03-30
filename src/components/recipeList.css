@@ -88,9 +88,7 @@
     padding: 5px;
     font-size: 0.78rem;
   }
-  .recipe-list {
-    gap: 1px;  /* Adjust spacing between the items */
-  }
+
 }
 
 /* Media query for screens smaller than 380px */
@@ -136,5 +134,3 @@
   }
 
 }
-
-

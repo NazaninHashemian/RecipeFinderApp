@@ -1,4 +1,14 @@
 /* RecipeCard.css */
+
+.recipe-error-loading {
+  /* padding-left: 10px; */
+  display: block;
+  height: 10px;
+  width: 0;
+  /* visibility: hidden; */
+  border-style: dashed;
+}
+
 .recipe-card {
   border: 1px solid #ddd;
   padding: 5px;
@@ -12,10 +22,6 @@
   box-sizing: border-box; 
 }
 
-.recipe-error-loading {
-  padding-left: 10px;
-}
-
 .recipe-image {
   max-width: 200px;
   width: 100%;
@@ -26,4 +32,3 @@
 .recipe-title {
   text-align: center;
 }
-
