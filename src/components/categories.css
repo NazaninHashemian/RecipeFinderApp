@@ -52,6 +52,17 @@
   max-height: 200px; /* Limits height */
 }
 
+/* Dark mode support */
+body.dark-mode .category-list div {
+  background-color: #222; /* Dark background */
+  color: #fff; /* Light text */
+  border: 1px solid #444; /* Darker border */
+}
+
+body.dark-mode .category-list p {
+  color: #ddd; /* Lighter text for readability */
+}
+
 /* Responsive design for larger screens */
 @media (min-width: 768px) {
   .category-list {

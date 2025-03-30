@@ -1,5 +1,6 @@
+// Categories.jsx
 import { useEffect, useState } from 'react';
-import './categories.css';
+import './Categories.css';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
