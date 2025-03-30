@@ -63,6 +63,24 @@ body.dark-mode .category-list p {
   color: #ddd; /* Lighter text for readability */
 }
 
+/* Customize scrollbar for dark mode */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #333; /* Dark background */
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #888; /* Lighter thumb for visibility */
+  border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #bbb; /* Even lighter on hover */
+}
+
 /* Responsive design for larger screens */
 @media (min-width: 768px) {
   .category-list {
