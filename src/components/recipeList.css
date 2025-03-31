@@ -1,4 +1,8 @@
 /* Recipe List Styles */
+.container{
+  margin-top: 50px;
+}
+
 .recipe-list {
   display: flex;
   flex-wrap: wrap;  /* Allow items to wrap to the next line */
@@ -78,9 +82,7 @@
 
 /* Media query for screens smaller than 490px */
 @media (max-width: 490px) {
-  h1 {
-    border-style: dashed;
-  }
+
   /* Input Field */
   .input {
     padding: 5px;

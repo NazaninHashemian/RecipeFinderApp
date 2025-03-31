@@ -50,7 +50,7 @@ const Cuisine = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h1 id="main-heading">{cuisine || 'No Cuisine'} Recipes</h1>
       <SearchBar
         label= "Cuisine: "

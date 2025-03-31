@@ -44,7 +44,7 @@ const MealFirstLetter = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h1 id="main-heading">Recipe of {mealStart || 'No meal name'}</h1>
       <SearchBar
         label="First Letter: "

@@ -11,7 +11,7 @@
     transition: background 0.3s ease;
     position: fixed;
     top: 57px;
-    right: 18px;
+    right: 25px;
     justify-content: space-between; /* Space between the slider and label */
   }
   
@@ -45,10 +45,9 @@
   /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
   .toggle-container {
-    width: 58px; /* Smaller width for the toggle container */
-    height: 20px; /* Smaller height */
-    /* padding: 2px; */
-    right: 8px;
+    width: 62px; /* Smaller width for the toggle container */
+    height: 22px; /* Smaller height */
+    right: 15px;
   }
 
   .toggle-slider {
@@ -56,117 +55,54 @@
     height: 15px; /* Smaller slider */
   }
   .dark.toggle-slider {
-    transform: translateX(48px); /* Moves slider to the right */
+    transform: translateX(50px); /* Moves slider to the right */
   }
 
   .mode-label {
     font-size: .75em; /* Smaller font size for the label */
-    margin-left: 2px;
+    margin-left: 3px;
   }
 }
 
 /* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
   .toggle-container {
-    width: 50px; /* Smaller width for the toggle container */
-    height: 20px; /* Smaller height */
-    right: 6px;
-  }
-
-  .toggle-slider {
-    width: 14px; /* Smaller slider */
-    height: 14px; /* Smaller slider */
-  }
-  .dark.toggle-slider {
-    transform: translateX(40px); /* Moves slider to the right */
-  }
-
-  .mode-label {
-    font-size: .85em; /* Smaller font size for the label */
-
-  }
-}
-
-/* Media query for screens smaller than 380px */
-@media (max-width: 380px) {
-  .toggle-container {
-    width: 60px; /* Smaller width for the toggle container */
-    height: 18px; /* Smaller height */
-  }
-
-  .toggle-slider {
-    width: 17px; /* Smaller slider */
-    height: 18px; /* Smaller slider */
-  }
-  .dark.toggle-slider {
-    transform: translateX(53px); /* Moves slider to the right */
-  }
-
-  .mode-label {
-    font-size: .8em; /* Smaller font size for the label */
-
-  }
-}
-
-/* Media query for screens smaller than 338px */
-@media (max-width: 338px) {
-  .toggle-container {
-    width: 55px; /* Smaller width for the toggle container */
-    height: 17px; /* Smaller height */
-  }
-
-  .toggle-slider {
-    width: 16px; /* Smaller slider */
-    height: 17px; /* Smaller slider */
-  }
-  .dark.toggle-slider {
-    transform: translateX(48px); /* Moves slider to the right */
-  }
-
-  .mode-label {
-    font-size: .78em; /* Smaller font size for the label */
-
-  }
-}
-
-/* Media query for screens smaller than 330px */
-@media (max-width: 330px) {
-  .toggle-container {
-    width: 46px; /* Smaller width for the toggle container */
-    height: 14px; /* Smaller height */
-  }
-
-  .toggle-slider {
-    width: 15px; /* Smaller slider */
-    height: 14px; /* Smaller slider */
-  }
-  .dark.toggle-slider {
-    transform: translateX(44px); /* Moves slider to the right */
-  }
-
-  .mode-label {
-    font-size: .72em; /* Smaller font size for the label */
-
-  }
-}
-
-/* Media query for screens smaller than 320px */
-@media (max-width: 320px) {
-  .toggle-container {
-    width: 38px; /* Smaller width for the toggle container */
-    height: 8px;
+    width: 58px; 
+    height: 20px;
+    right: 12px;
   }
 
   .toggle-slider {
     width: 14px;
-    height: 10px;
+    height: 14px; 
   }
   .dark.toggle-slider {
-    transform: translateX(34px); 
+    transform: translateX(47px); 
   }
 
   .mode-label {
-    font-size: .6em; 
+    font-size: .7em; 
 
   }
 }
+
+/* Media query for screens smaller than 370px */
+@media (max-width: 370px) {
+  .toggle-container {
+    height: 17px;
+  }
+
+  .toggle-slider {
+    width: 13px;
+    height: 13px; 
+  }
+  .dark.toggle-slider {
+    transform: translateX(47px); 
+  }
+
+  .mode-label {
+    font-size: .65em; 
+
+  }
+}
+

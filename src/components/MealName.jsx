@@ -50,7 +50,7 @@ const RecipeList = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h1 id="main-heading">Recipe of {mealName || 'No meal name'}</h1>
       <SearchBar
         label="Main Ingredient:"

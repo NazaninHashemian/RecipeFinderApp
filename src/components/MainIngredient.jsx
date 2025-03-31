@@ -58,7 +58,7 @@ const MainIngredient = () => {
     setError(null);
   };
   return (
-    <div>
+    <div className='container'>
       <h1 id="main-heading">Recipe with {ingredient || 'No ingredient'}</h1>
       <SearchBar
         label="Main Ingredient:"
