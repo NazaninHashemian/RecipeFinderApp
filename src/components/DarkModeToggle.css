@@ -1,7 +1,7 @@
 /* Dark Mode Toggle Switch */
 .toggle-container {
     width: 82px; /* Adjust the container width to fit the switch and label */
-    height: 30px;
+    height: 25px;
     background: #ddd;
     border-radius: 18px;
     display: flex;
@@ -16,7 +16,7 @@
   }
   
   .toggle-slider {
-    width: 20px;
+    width: 22px;
     height: 20px;
     background: white;
     border-radius: 50%;
@@ -25,7 +25,7 @@
   
   /* Move the button to the right when dark mode is active */
   .dark.toggle-slider {
-    transform: translateX(68px); /* Moves slider to the right */
+    transform: translateX(64px); /* Moves slider to the right */
     background-color: #333; /* Dark background for the slider in dark mode */
   }
   
@@ -36,7 +36,7 @@
   
   /* Label beside the switch */
   .mode-label {
-    font-size: .92em;
+    font-size: .8em;
     color: #111;
     font-weight: bold;
     margin-left: 5px;
@@ -47,19 +47,18 @@
   .toggle-container {
     width: 62px; /* Smaller width for the toggle container */
     height: 22px; /* Smaller height */
-    right: 15px;
   }
 
   .toggle-slider {
-    width: 15px; /* Smaller slider */
+    width: 18px; /* Smaller slider */
     height: 15px; /* Smaller slider */
   }
   .dark.toggle-slider {
-    transform: translateX(50px); /* Moves slider to the right */
+    transform: translateX(48px); /* Moves slider to the right */
   }
 
   .mode-label {
-    font-size: .75em; /* Smaller font size for the label */
+    font-size: .69em; /* Smaller font size for the label */
     margin-left: 3px;
   }
 }
@@ -73,7 +72,7 @@
   }
 
   .toggle-slider {
-    width: 14px;
+    width: 16px;
     height: 14px; 
   }
   .dark.toggle-slider {
@@ -81,7 +80,7 @@
   }
 
   .mode-label {
-    font-size: .7em; 
+    font-size: .68em; 
 
   }
 }
@@ -92,10 +91,6 @@
     height: 17px;
   }
 
-  .toggle-slider {
-    width: 13px;
-    height: 13px; 
-  }
   .dark.toggle-slider {
     transform: translateX(47px); 
   }
