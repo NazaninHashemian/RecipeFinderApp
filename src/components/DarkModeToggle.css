@@ -1,23 +1,23 @@
 /* Dark Mode Toggle Switch */
 .toggle-container {
-    width: 100px; /* Adjust the container width to fit the switch and label */
+    width: 82px; /* Adjust the container width to fit the switch and label */
     height: 30px;
     background: #ddd;
-    border-radius: 20px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 5px;
+    padding: 3px;
     transition: background 0.3s ease;
     position: fixed;
-    top: 70px;
-    right: 20px;
+    top: 57px;
+    right: 18px;
     justify-content: space-between; /* Space between the slider and label */
   }
   
   .toggle-slider {
     width: 20px;
-    height: 21px;
+    height: 20px;
     background: white;
     border-radius: 50%;
     transition: transform 0.3s ease;
@@ -25,57 +25,60 @@
   
   /* Move the button to the right when dark mode is active */
   .dark.toggle-slider {
-    transform: translateX(80px); /* Moves slider to the right */
+    transform: translateX(68px); /* Moves slider to the right */
     background-color: #333; /* Dark background for the slider in dark mode */
   }
   
   /* Change background color when dark mode is active */
-  .dark.toggle-container {
+  /* .dark.toggle-container {
     background: #555;
-  }
+  } */
   
   /* Label beside the switch */
   .mode-label {
-    font-size: 1em;
-    color: #333;
+    font-size: .92em;
+    color: #111;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 5px;
   }
   
   /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
   .toggle-container {
-    width: 80px; /* Smaller width for the toggle container */
-    height: 25px; /* Smaller height */
+    width: 58px; /* Smaller width for the toggle container */
+    height: 20px; /* Smaller height */
+    /* padding: 2px; */
+    right: 8px;
   }
 
   .toggle-slider {
-    width: 18px; /* Smaller slider */
-    height: 19px; /* Smaller slider */
+    width: 15px; /* Smaller slider */
+    height: 15px; /* Smaller slider */
   }
   .dark.toggle-slider {
-    transform: translateX(70px); /* Moves slider to the right */
+    transform: translateX(48px); /* Moves slider to the right */
   }
 
   .mode-label {
-    font-size: .9em; /* Smaller font size for the label */
-
+    font-size: .75em; /* Smaller font size for the label */
+    margin-left: 2px;
   }
 }
 
 /* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
   .toggle-container {
-    width: 70px; /* Smaller width for the toggle container */
+    width: 50px; /* Smaller width for the toggle container */
     height: 20px; /* Smaller height */
+    right: 6px;
   }
 
   .toggle-slider {
-    width: 18px; /* Smaller slider */
-    height: 19px; /* Smaller slider */
+    width: 14px; /* Smaller slider */
+    height: 14px; /* Smaller slider */
   }
   .dark.toggle-slider {
-    transform: translateX(60px); /* Moves slider to the right */
+    transform: translateX(40px); /* Moves slider to the right */
   }
 
   .mode-label {
@@ -159,11 +162,11 @@
     height: 10px;
   }
   .dark.toggle-slider {
-    transform: translateX(34px); /* Moves slider to the right */
+    transform: translateX(34px); 
   }
 
   .mode-label {
-    font-size: .6em; /* Smaller font size for the label */
+    font-size: .6em; 
 
   }
 }

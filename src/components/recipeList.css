@@ -78,6 +78,9 @@
 
 /* Media query for screens smaller than 490px */
 @media (max-width: 490px) {
+  h1 {
+    border-style: dashed;
+  }
   /* Input Field */
   .input {
     padding: 5px;
