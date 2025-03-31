@@ -12,6 +12,7 @@ import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories';
 import Cuisine from './components/Cuisine';
 import Random from './components/Random';
+import DarkModeToggle from './components/DarkModeToggle'; 
 import './App.css';
 
 const activeHandling = ({ isActive }) => (isActive ? 'active' : ''); // Updated handling for active class
@@ -55,9 +56,11 @@ function App() {
           </NavLink>
         </div>
 
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {/* <button className="dark-mode-toggle" onClick={toggleDarkMode}>
           {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+        </button> */}
+
+        <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
 
         <Routes>
           <Route path="/name" element={<MealName />} />

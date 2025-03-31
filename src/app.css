@@ -45,6 +45,11 @@ body.dark-mode {
   color: #fff;
 }
 
+/*  Make scrollbar visible in dark mode */
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
 body.dark-mode .nav button {
   background-color: #111;
   color: white;
@@ -52,18 +57,6 @@ body.dark-mode .nav button {
 
 body.dark-mode .nav button:hover {
   background-color: #444;
-}
-
-/* Dark mode toggle button */
-.dark-mode-toggle {
-  position: fixed;
-  top: 70px;
-  right: 20px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 /* Media query for smaller screens */
