@@ -56,10 +56,6 @@ function App() {
           </NavLink>
         </div>
 
-        {/* <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-        </button> */}
-
         <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
 
         <Routes>

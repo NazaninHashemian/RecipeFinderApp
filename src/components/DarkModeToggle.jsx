@@ -4,9 +4,12 @@ import './DarkModeToggle.css';
 
 const DarkModeToggle = ({ isDarkMode, toggleDarkMode }) => {
   return (
-    <div title='Switch between Dark and Light Mode' className="toggle-container" onClick={toggleDarkMode}>
-      <div className={`toggle-slider ${isDarkMode ? 'dark' : ''}`} />
+    <div className='main-container'>
       <span className="mode-label">{isDarkMode ? 'Dark Mode' : 'Light Mode'}</span>
+      <div className="toggle-container" onClick={toggleDarkMode}>
+        <div className={`toggle-slider ${isDarkMode ? 'dark' : ''}`} />
+        {/* <span className="mode-label1">{isDarkMode ? 'Dark Mode' : 'Light Mode'}</span> */}
+      </div>
     </div>
   );
 };

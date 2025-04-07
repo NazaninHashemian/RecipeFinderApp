@@ -5,11 +5,18 @@ import Error from './ErrorMessage';
 import './RecipeCard.css';
 import Modal from './Modal';
 
+
+// // Define types for props and state variables
+// interface Recipe {
+//   idMeal: string;
+//   strMealThumb: string;
+//   strMeal: string;
+// }
 const RecipeCard = ({ recepie }) => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [detail, setDetail] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [detail, setDetail] = useState<any | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie || {}; // Prevents errors if recipe is undefined;
   useEffect(() => {
