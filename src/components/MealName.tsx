@@ -6,11 +6,21 @@ import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import './RecipeList.css';
 
-const RecipeList = () => {
-  const [mealName, setMealName] = useState('soup');
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+interface Recipe {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  strInstructions: string;
+  strCategory?: string;
+  strArea?: string;
+  [key: string]: string | undefined; 
+}
+
+const RecipeList: React.FC = () => {
+  const [mealName, setMealName] = useState<string>('soup');
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Fetch recipes by meal name
   useEffect(() => {
@@ -34,8 +44,8 @@ const RecipeList = () => {
         }
 
         setLoading(false);
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) setError(error.message);
         setLoading(false);
       }
     };
@@ -58,6 +68,7 @@ const RecipeList = () => {
         onChange={setMealName}
         onClear={handleClearSearch}
         placeholder="Enter Meal Name"
+         cacheKey="mealNameCache" // Example of a cache key
       />
       <div className="load-error">
         <LoadingIndicator isLoading={loading} />
