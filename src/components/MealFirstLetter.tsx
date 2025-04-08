@@ -1,15 +1,25 @@
 // src/components/MealFirstLetter.jsx
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 
-const MealFirstLetter = () => {
-  const [mealStart, setMealStart] = useState('a');
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+interface Recipe {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  strInstructions: string;
+  strCategory?: string;
+  strArea?: string;
+  [key: string]: string | undefined;
+}
+
+const MealFirstLetter:React.FC = () => {
+  const [mealStart, setMealStart] = useState<string>('a');
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     if (!mealStart.trim() || !/^[a-zA-Z]$/.test(mealStart)) return; 
     const fetchMealByFirstLetter = async () => {
@@ -29,8 +39,8 @@ const MealFirstLetter = () => {
           setRecipes([]);
         }
         setLoading(false);
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if(error instanceof Error) setError(error.message);
         setLoading(false);
       }
     };
@@ -53,6 +63,7 @@ const MealFirstLetter = () => {
         onClear={handleClearSearch}
         placeholder="Enter First Letter of Meal Name"
         maxLength={1} // Only restricts input in this component
+        cacheKey="mealFirstLetterCache"
       />
       <div className="load-error">
         <LoadingIndicator isLoading={loading} />
