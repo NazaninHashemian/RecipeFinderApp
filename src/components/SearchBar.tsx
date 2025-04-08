@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({
+//  interface for props 
+interface SearchBarProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  onClear: () => void;
+  placeholder?: string;
+  fetchDataFunction?: () => Promise<string[]>;
+  cacheKey: string;
+  maxLength?: number;
+}
+
+const SearchBar:React.FC<SearchBarProps> = ({
   label,
   value,
   onChange,
@@ -9,11 +21,11 @@ const SearchBar = ({
   placeholder,
   fetchDataFunction,
   cacheKey,
-  maxLength, //  Add maxLength prop
+  maxLength, 
 }) => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [items, setItems] = useState([]);
+  const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
+  const [filteredItems, setFilteredItems] = useState<string[]>([]);
+  const [items, setItems] = useState<string[]>([]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -33,7 +45,7 @@ const SearchBar = ({
     loadData();
   }, [fetchDataFunction, cacheKey]);
   // Handle input change and filter cuisines based on the input
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value); // Update the input value in the parent component
     const searchTerm = e.target.value.toLowerCase();
     setFilteredItems(
@@ -45,7 +57,7 @@ const SearchBar = ({
   };
 
   // Handle cuisine selection from the dropdown
-  const handleSelectItem = (selectedItem) => {
+  const handleSelectItem = (selectedItem: string) => {
     onChange(selectedItem); // Set the selected item to the input field
     setIsDropdownVisible(false); // Hide dropdown after selection
   };
