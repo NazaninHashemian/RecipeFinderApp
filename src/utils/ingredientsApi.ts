@@ -6,7 +6,7 @@ const fetchIngredients = async () => {
     );
     const data = await response.json();
     if (data.meals) {
-      return data.meals.map((meal) => meal.strIngredient);
+      return data.meals.map((meal: {strIngredient: string}) => meal.strIngredient);
     }
     return []; // If no ingredients are found, return an empty array
   } catch (error) {

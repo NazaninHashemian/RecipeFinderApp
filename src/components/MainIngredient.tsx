@@ -1,5 +1,5 @@
 // src/components/RecipeList.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
@@ -7,11 +7,19 @@ import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import './RecipeList.css';
 
+interface Recipe {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  strInstructions: string;
+  [key: string]: string | undefined;
+} 
+
 const MainIngredient = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [ingredient, setIngredient] = useState('chicken_breast');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [ingredient, setIngredient] = useState<string>('chicken_breast');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!ingredient.trim()) {
@@ -42,8 +50,8 @@ const MainIngredient = () => {
           setRecipes([]);
           setLoading(false);
         }
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if(error instanceof Error) setError(error.message);
       } finally {
         setLoading(false);
       }
