@@ -5,12 +5,18 @@ import SearchBar from './SearchBar';
 import fetchCuisines from '../utils/cuisinesApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
+interface Recipe {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  [key: string]: string | undefined;
+}
 
-const Cuisine = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [cuisine, setCuisine] = useState('Canadian');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+const Cuisine:React.FC = () => {
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [cuisine, setCuisine] = useState<string>('Canadian');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!cuisine.trim()) {
@@ -34,8 +40,8 @@ const Cuisine = () => {
         } else {
           setRecipes([]);
         }
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if(error instanceof Error) setError(error.message);
       } finally {
         setLoading(false);
       }
