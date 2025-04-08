@@ -1,8 +1,12 @@
 // DarkModeToggle.jsx
 import React from 'react';
 import './DarkModeToggle.css';
+interface DarkModeToggleProps {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}
 
-const DarkModeToggle = ({ isDarkMode, toggleDarkMode }) => {
+const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <div className='main-container'>
       <span className="mode-label">{isDarkMode ? 'Dark Mode' : 'Light Mode'}</span>
