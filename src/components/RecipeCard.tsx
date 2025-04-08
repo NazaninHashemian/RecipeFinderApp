@@ -1,23 +1,37 @@
 //src/components/RecipeCard.jsx
-import { useEffect, useState } from 'react';
-import LoadingIndicator from './LoadingIndicator';
-import Error from './ErrorMessage';
+import React, { useEffect, useState } from 'react';
+// import LoadingIndicator from './LoadingIndicator';
+// import Error from './ErrorMessage';
 import './RecipeCard.css';
 import Modal from './Modal';
 
-const RecipeCard = ({ recepie }) => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [detail, setDetail] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+type Recipe = {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb?: string;
+  strInstructions: string;
+  strCategory?: string;
+  strArea?: string;
+  [key: `strIngredient${number}`]: string | undefined;
+};
+
+type RecipeCardProps = {
+  recepie: Recipe | null; // Ensure recepie is a valid Recipe object or null
+};
+
+const RecipeCard: React.FC<RecipeCardProps> = ({ recepie }) => {
+  // const [loading, setLoading] = useState<boolean >(false);
+  // const [error, setError] = useState<string | null>(null);
+  const [detail, setDetail] = useState<Recipe | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie || {}; // Prevents errors if recipe is undefined;
   useEffect(() => {
     if (!idMeal) return;  // Prevent fetching if idMeal is not available
     const fetchRecipeDetail = async () => {
       try {
-        setLoading(true);
-        setError(null);
+        // setLoading(true);
+        // setError(null);
 
         const response = await fetch(
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
@@ -27,12 +41,14 @@ const RecipeCard = ({ recepie }) => {
         if (data.meals) {
           setDetail(data.meals[0]);
         } else setDetail(null);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
+        // setLoading(false);
+      } catch 
+      // (error: any) 
+      {
+        // setError(error.message);
+        // setLoading(false);
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     };
 
