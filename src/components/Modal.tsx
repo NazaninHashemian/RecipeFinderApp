@@ -2,12 +2,27 @@
 import React from 'react';
 import './Modal.css';
 
-const Modal = ({ recipe, onClose }) => {
+type Recipe = {
+  strMeal: string;
+  strMealThumb?: string;
+  strInstructions: string;
+  strCategory?: string;
+  strArea?: string;
+  [key: `strIngredient${number}`]: string | undefined;
+};
+
+type ModalProps = {
+  recipe: Recipe;
+  onClose: () => void;
+};
+
+
+const Modal: React.FC<ModalProps> = ({ recipe, onClose }) => {
   const { strMeal, strMealThumb, strInstructions, strCategory, strArea } = recipe;
 
   // Function to get ingredients
-  const getIngredients = () => {
-    let ingredients = [];
+  const getIngredients = (): string[] => {
+    const ingredients: string[] = [];
     const maxIngredientsCount = 20;
     for (let i = 1; i <= maxIngredientsCount; i++) {
       const ingredient = recipe[`strIngredient${i}`];
@@ -25,7 +40,13 @@ const Modal = ({ recipe, onClose }) => {
           <h2>{strMeal}</h2>
           <button className="close-button" onClick={onClose}>X</button>
         </div>
-        <img src={strMealThumb} alt={strMeal} />
+        {/* <img src={strMealThumb} alt={strMeal} /> */}
+        {strMealThumb ? (
+          <img src={strMealThumb} alt={strMeal} />
+        ) : (
+          <p>No image available</p>
+        )}
+
         <div className="modal-detail">
           <div>
             <p>{strArea ? `Origin: ${strArea}` : 'Area not available'}</p>
