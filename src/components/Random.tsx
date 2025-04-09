@@ -1,13 +1,24 @@
 // src/components/Random.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import './RecipeList.css';
 
+
+type Recipe = {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb?: string;
+  strInstructions: string;
+  strCategory?: string;
+  strArea?: string;
+  [key: `strIngredient${number}`]: string | undefined;
+};
+
 const RandomRecipe = () => {
-  const [recipe, setRecipe] = useState([]);
+  const [recipe, setRecipe] = useState<Recipe[]>([]);
   const [refresh, setRefresh] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string| null>(null);
 
   useEffect(() => {
     //Define asynic function to fetch recipe
@@ -33,8 +44,8 @@ const RandomRecipe = () => {
         }
 
         setLoading(false); // Stop loading
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) setError(error.message);
         setLoading(false); // Stop loading even if an error occurs
       }
     };
