@@ -5,15 +5,8 @@ import SearchBar from './SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
+import { Recipe } from '../utils/types';
 import './RecipeList.css';
-
-interface Recipe {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strInstructions: string;
-  [key: string]: string | undefined;
-} 
 
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);

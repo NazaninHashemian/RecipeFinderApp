@@ -4,17 +4,8 @@ import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
+import { Recipe } from '../utils/types';
 import './RecipeList.css';
-
-interface Recipe {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strInstructions: string;
-  strCategory?: string;
-  strArea?: string;
-  [key: string]: string | undefined; 
-}
 
 const RecipeList: React.FC = () => {
   const [mealName, setMealName] = useState<string>('soup');

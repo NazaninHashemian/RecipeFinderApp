@@ -1,18 +1,8 @@
 // src/components/Random.jsx
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
+import { Recipe } from '../utils/types';
 import './RecipeList.css';
-
-
-type Recipe = {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb?: string;
-  strInstructions: string;
-  strCategory?: string;
-  strArea?: string;
-  [key: `strIngredient${number}`]: string | undefined;
-};
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState<Recipe[]>([]);

@@ -2,18 +2,9 @@
 import React, { useEffect, useState } from 'react';
 // import LoadingIndicator from './LoadingIndicator';
 // import Error from './ErrorMessage';
-import './RecipeCard.css';
 import Modal from './Modal';
-
-type Recipe = {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb?: string;
-  strInstructions: string;
-  strCategory?: string;
-  strArea?: string;
-  [key: `strIngredient${number}`]: string | undefined;
-};
+import { Recipe } from '../utils/types';
+import './RecipeCard.css';
 
 type RecipeCardProps = {
   recepie: Recipe | null; // Ensure recepie is a valid Recipe object or null

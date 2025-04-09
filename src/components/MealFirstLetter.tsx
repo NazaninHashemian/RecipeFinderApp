@@ -3,17 +3,8 @@ import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
+import { Recipe } from '../utils/types';
 import ErrorMessage from './ErrorMessage';
-
-interface Recipe {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strInstructions: string;
-  strCategory?: string;
-  strArea?: string;
-  [key: string]: string | undefined;
-}
 
 const MealFirstLetter:React.FC = () => {
   const [mealStart, setMealStart] = useState<string>('a');
