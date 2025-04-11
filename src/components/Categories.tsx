@@ -1,6 +1,7 @@
 // Categories.jsx
 import { useEffect, useState } from 'react';
 import './Categories.css';
+import { BASE_URL } from '../utils/apiConfig';
 
 interface Category {
   idCategory: string;
@@ -20,9 +21,7 @@ const Categories: React.FC= () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/categories.php`
-        );
+        const response = await fetch(`${BASE_URL}/categories.php`);
 
         const data = await response.json();
         if (data.categories) {

@@ -6,7 +6,9 @@ import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
+import { BASE_URL } from '../utils/apiConfig';
 import './RecipeList.css';
+
 
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -28,10 +30,7 @@ const MainIngredient = () => {
         setLoading(true);
         setError(null);
 
-        // Making the API call
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
-        );
+        const response = await fetch(`${BASE_URL}/filter.php?i=${ingredient}`);
 
         // If response is successful, parse the data as JSON
         const data = await response.json();

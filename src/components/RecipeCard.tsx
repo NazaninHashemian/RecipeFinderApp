@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 // import Error from './ErrorMessage';
 import Modal from './Modal';
 import Recipe from '../utils/types';
+import { BASE_URL } from '../utils/apiConfig';
 import './RecipeCard.css';
 
 type RecipeCardProps = {
@@ -24,9 +25,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recepie }) => {
         // setLoading(true);
         // setError(null);
 
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
-        );
+        const response = await fetch(`${BASE_URL}/lookup.php?i=${idMeal}`);
         const data = await response.json();
 
         if (data.meals) {

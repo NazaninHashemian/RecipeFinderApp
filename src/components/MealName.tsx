@@ -5,7 +5,9 @@ import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
+import { BASE_URL } from '../utils/apiConfig';
 import './RecipeList.css';
+
 
 const RecipeList: React.FC = () => {
   const [mealName, setMealName] = useState('soup');
@@ -22,9 +24,10 @@ const RecipeList: React.FC = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
-        );
+        // const response = await fetch(
+        //   `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+        // );
+        const response = await fetch(`${BASE_URL}/search.php?s=${mealName}`);
 
         const data = await response.json();
 

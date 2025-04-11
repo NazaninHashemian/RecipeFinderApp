@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import Recipe from '../utils/types';
 import './RecipeList.css';
+import { BASE_URL } from '../utils/apiConfig';
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState<Recipe[]>([]);
@@ -17,11 +18,7 @@ const RandomRecipe = () => {
         setLoading(true);
         setError(null);
 
-        // Making the API call
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/random.php`
-        );
-
+        const response = await fetch(`${BASE_URL}/random.php`);
         // If response is successful, parse the data as JSON
         const data = await response.json();
         // console.log(data.meals);

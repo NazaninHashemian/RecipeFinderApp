@@ -5,6 +5,7 @@ import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import Recipe from '../utils/types';
 import ErrorMessage from './ErrorMessage';
+import { BASE_URL } from '../utils/apiConfig';
 
 const MealFirstLetter:React.FC = () => {
   const [mealStart, setMealStart] = useState<string>('a');
@@ -18,9 +19,7 @@ const MealFirstLetter:React.FC = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/search.php?f=${mealStart}`
-        );
+        const response = await fetch(`${BASE_URL}/search.php?f=${mealStart}`);
         const data = await response.json();
 
         if (data.meals) {

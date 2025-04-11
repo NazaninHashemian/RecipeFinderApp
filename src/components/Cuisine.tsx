@@ -6,6 +6,7 @@ import fetchCuisines from '../utils/cuisinesApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
+import { BASE_URL } from '../utils/apiConfig';
 
 const Cuisine:React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -24,10 +25,8 @@ const Cuisine:React.FC = () => {
       try {
         setLoading(true); // Start loading
         setError(null); // Reset error before fetching
-
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisine}`
-        );
+        
+        const response = await fetch(`${BASE_URL}/filter.php?a=${cuisine}`);
         const data = await response.json();
 
         if (data.meals) {
