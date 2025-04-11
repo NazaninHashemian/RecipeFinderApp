@@ -5,8 +5,8 @@ import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
-import { BASE_URL } from '../utils/apiConfig';
 import './RecipeList.css';
+import { fetchRecipesByName } from '../services/recipeService';
 
 
 const RecipeList: React.FC = () => {
@@ -24,15 +24,12 @@ const RecipeList: React.FC = () => {
         setLoading(true);
         setError(null);
 
-        // const response = await fetch(
-        //   `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
-        // );
-        const response = await fetch(`${BASE_URL}/search.php?s=${mealName}`);
+        // const response = await fetch(`${BASE_URL}/search.php?s=${mealName}`);
 
-        const data = await response.json();
-
-        if (data.meals) {
-          setRecipes(data.meals); // Set the recipes based on meal name
+        // const data = await response.json();
+        const data = await fetchRecipesByName(mealName);
+        if (data) {
+          setRecipes(data); // Set the recipes based on meal name
         } else {
           setRecipes([]); // If no meals found, set an empty array
         }

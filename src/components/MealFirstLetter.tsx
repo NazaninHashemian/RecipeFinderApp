@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import Recipe from '../utils/types';
 import ErrorMessage from './ErrorMessage';
-import { BASE_URL } from '../utils/apiConfig';
+import { fetchRecipesByFirstLetter } from '../services/recipeService';
 
 const MealFirstLetter:React.FC = () => {
   const [mealStart, setMealStart] = useState<string>('a');
@@ -19,11 +19,9 @@ const MealFirstLetter:React.FC = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${BASE_URL}/search.php?f=${mealStart}`);
-        const data = await response.json();
-
-        if (data.meals) {
-          setRecipes(data.meals);
+        const data = await fetchRecipesByFirstLetter(mealStart);
+        if (data) {
+          setRecipes(data);
           // console.log(data.meals);
         } else {
           setRecipes([]);

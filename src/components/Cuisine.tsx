@@ -6,7 +6,7 @@ import fetchCuisines from '../utils/cuisinesApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
-import { BASE_URL } from '../utils/apiConfig';
+import { fetchRecipesByCuisine } from '../services/recipeService';
 
 const Cuisine:React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -25,12 +25,13 @@ const Cuisine:React.FC = () => {
       try {
         setLoading(true); // Start loading
         setError(null); // Reset error before fetching
-        
-        const response = await fetch(`${BASE_URL}/filter.php?a=${cuisine}`);
-        const data = await response.json();
 
-        if (data.meals) {
-          setRecipes(data.meals);
+        // const response = await fetch(`${BASE_URL}/filter.php?a=${cuisine}`);
+        // const data = await response.json();
+        const data = await fetchRecipesByCuisine(cuisine);
+
+        if (data) {
+          setRecipes(data);
         } else {
           setRecipes([]);
         }

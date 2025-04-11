@@ -6,8 +6,8 @@ import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
-import { BASE_URL } from '../utils/apiConfig';
 import './RecipeList.css';
+import { fetchRecipesByIngredient } from '../services/recipeService';
 
 
 const MainIngredient = () => {
@@ -30,14 +30,9 @@ const MainIngredient = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${BASE_URL}/filter.php?i=${ingredient}`);
-
-        // If response is successful, parse the data as JSON
-        const data = await response.json();
-        // console.log(data.meals);
-
-        if (data.meals) {
-          setRecipes(data.meals);
+        const data = await fetchRecipesByIngredient(ingredient);
+        if (data) {
+          setRecipes(data);
         } else {
           setRecipes([]);
           setLoading(false);

@@ -1,8 +1,7 @@
 // Categories.jsx
 import { useEffect, useState } from 'react';
 import './Categories.css';
-import { BASE_URL } from '../utils/apiConfig';
-
+import { fetchRecipesByCategories } from '../services/recipeService';
 interface Category {
   idCategory: string;
   strCategory: string;
@@ -20,13 +19,10 @@ const Categories: React.FC= () => {
       try {
         setLoading(true);
         setError(null);
+        const data = await fetchRecipesByCategories();
 
-        const response = await fetch(`${BASE_URL}/categories.php`);
-
-        const data = await response.json();
-        if (data.categories) {
-          setCategories(data.categories);
-          // console.log(data.categories);
+        if (data) {
+          setCategories(data);
         } else {
           setCategories([]);
         }

@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 import Recipe from '../utils/types';
 import './RecipeList.css';
-import { BASE_URL } from '../utils/apiConfig';
+import { fetchRecipesRandomly } from '../services/recipeService';
+
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState<Recipe[]>([]);
@@ -18,13 +19,10 @@ const RandomRecipe = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${BASE_URL}/random.php`);
-        // If response is successful, parse the data as JSON
-        const data = await response.json();
-        // console.log(data.meals);
+        const data = await fetchRecipesRandomly(); // already meals[]
 
-        if (data.meals) {
-          setRecipe(data.meals);
+        if (data) {
+          setRecipe(data);
         } else {
           setRecipe([]);
           setLoading(false);
