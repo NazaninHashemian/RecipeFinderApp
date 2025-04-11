@@ -14,6 +14,7 @@ Error Handling: Displays a user-friendly message when no recipes are found or if
 Technologies Used
 HTML5 for markup
 CSS3 for styling
+TypeScript for enhanced type safety and development experience
 JavaScript (Vanilla JS) for dynamic behavior and API integration
 MealDB API for fetching recipe data
 
