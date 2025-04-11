@@ -12,10 +12,10 @@ Responsive Design: The app adjusts its layout for optimal viewing on mobile, tab
 Error Handling: Displays a user-friendly message when no recipes are found or if there's an issue with the API.
 
 Technologies Used
-HTML5 for markup
-CSS3 for styling
-TypeScript for enhanced type safety and development experience
-JavaScript (Vanilla JS) for dynamic behavior and API integration
+HTML5 for markup,
+CSS3 for styling,
+TypeScript for enhanced type safety and development experience,
+JavaScript (Vanilla JS) for dynamic behavior and API integration,
 MealDB API for fetching recipe data
 
 Installation
