@@ -1,8 +1,5 @@
 // utils/types.ts
-
-// utils/types.ts
-
-export interface Recipe {
+export default interface Recipe {
     idMeal: string;
     strMeal: string;
     strMealThumb: string;

@@ -5,13 +5,13 @@ import SearchBar from './SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
-import { Recipe } from '../utils/types';
+import Recipe from '../utils/types';
 import './RecipeList.css';
 
 const MainIngredient = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [ingredient, setIngredient] = useState<string>('chicken_breast');
-  const [loading, setLoading] = useState<boolean>(false);
+  const [ingredient, setIngredient] = useState('chicken_breast');
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

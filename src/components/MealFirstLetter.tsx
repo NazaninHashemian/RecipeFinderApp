@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
-import { Recipe } from '../utils/types';
+import Recipe from '../utils/types';
 import ErrorMessage from './ErrorMessage';
 
 const MealFirstLetter:React.FC = () => {

@@ -4,13 +4,13 @@ import RecipeCard from './RecipeCard';
 import SearchBar from './SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
-import { Recipe } from '../utils/types';
+import Recipe from '../utils/types';
 import './RecipeList.css';
 
 const RecipeList: React.FC = () => {
-  const [mealName, setMealName] = useState<string>('soup');
+  const [mealName, setMealName] = useState('soup');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch recipes by meal name

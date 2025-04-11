@@ -1,7 +1,7 @@
 // src/components/Random.jsx
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
-import { Recipe } from '../utils/types';
+import Recipe from '../utils/types';
 import './RecipeList.css';
 
 const RandomRecipe = () => {

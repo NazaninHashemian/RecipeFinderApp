@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // import LoadingIndicator from './LoadingIndicator';
 // import Error from './ErrorMessage';
 import Modal from './Modal';
-import { Recipe } from '../utils/types';
+import Recipe from '../utils/types';
 import './RecipeCard.css';
 
 type RecipeCardProps = {
@@ -14,7 +14,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recepie }) => {
   // const [loading, setLoading] = useState<boolean >(false);
   // const [error, setError] = useState<string | null>(null);
   const [detail, setDetail] = useState<Recipe | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to manage modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   const { idMeal, strMealThumb, strMeal } = recepie || {}; // Prevents errors if recipe is undefined;
   useEffect(() => {

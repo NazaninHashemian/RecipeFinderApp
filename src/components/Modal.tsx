@@ -1,15 +1,7 @@
 // src/components/Modal.jsx
 import React from 'react';
+import Recipe from '../utils/types';
 import './Modal.css';
-
-type Recipe = {
-  strMeal: string;
-  strMealThumb?: string;
-  strInstructions: string;
-  strCategory?: string;
-  strArea?: string;
-  [key: `strIngredient${number}`]: string | undefined;
-};
 
 type ModalProps = {
   recipe: Recipe;
