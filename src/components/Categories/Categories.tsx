@@ -1,7 +1,7 @@
 // Categories.jsx
 import { useEffect, useState } from 'react';
 import './Categories.css';
-import { fetchRecipesByCategories } from '../services/recipeService';
+import { fetchRecipesByCategories } from '../../services/recipeService';
 interface Category {
   idCategory: string;
   strCategory: string;
