@@ -9,7 +9,7 @@ import { useState } from 'react';
 import MainIngredient from './components/MainIngredient';
 import MealName from './components/MealName';
 import MealFirstLetter from './components/MealFirstLetter';
-import Categories from './components/Categories';
+import Categories from './components/Categories/Categories';
 import Cuisine from './components/Cuisine';
 import Random from './components/Random';
 import DarkModeToggle from './components/DarkModeToggle'; 
