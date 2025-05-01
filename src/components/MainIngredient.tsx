@@ -1,6 +1,6 @@
 // src/components/RecipeList.jsx
 import { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
+import RecipeCard from './RecipeCard/RecipeCard';
 import SearchBar from './SearchBar/SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';

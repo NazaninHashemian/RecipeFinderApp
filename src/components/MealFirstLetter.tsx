@@ -1,6 +1,6 @@
 // src/components/MealFirstLetter.jsx
 import React, { useEffect, useState } from 'react';
-import RecipeCard from './RecipeCard';
+import RecipeCard from './RecipeCard/RecipeCard';
 import SearchBar from './SearchBar/SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import Recipe from '../utils/types';

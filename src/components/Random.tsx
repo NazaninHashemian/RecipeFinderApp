@@ -1,6 +1,6 @@
 // src/components/Random.jsx
 import { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
+import RecipeCard from './RecipeCard/RecipeCard';
 import Recipe from '../utils/types';
 import './RecipeList.css';
 import { fetchRecipesRandomly } from '../services/recipeService';
