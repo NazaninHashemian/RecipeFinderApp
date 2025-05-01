@@ -12,7 +12,7 @@ import MealFirstLetter from './components/MealFirstLetter';
 import Categories from './components/Categories/Categories';
 import Cuisine from './components/Cuisine';
 import Random from './components/Random';
-import DarkModeToggle from './components/DarkModeToggle'; 
+import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle'; 
 import './App.css';
 
 const activeHandling = ({ isActive }) => (isActive ? 'active' : ''); // Updated handling for active class
