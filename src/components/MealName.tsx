@@ -1,7 +1,7 @@
 // src/components/mealName.jsx
 import React, { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar/SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';

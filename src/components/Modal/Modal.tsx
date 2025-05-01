@@ -1,6 +1,6 @@
 // src/components/Modal.jsx
 import React from 'react';
-import Recipe from '../utils/types';
+import Recipe from '../../utils/types';
 import './Modal.css';
 
 type ModalProps = {

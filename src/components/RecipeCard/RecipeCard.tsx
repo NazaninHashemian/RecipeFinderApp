@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react';
 // import LoadingIndicator from './LoadingIndicator';
 // import Error from './ErrorMessage';
-import Modal from './Modal';
-import Recipe from '../utils/types';
-import { BASE_URL } from '../utils/apiConfig';
+import Modal from '../Modal/Modal';
+import Recipe from '../../utils/types';
+import { BASE_URL } from '../../utils/apiConfig';
 import './RecipeCard.css';
 
 type RecipeCardProps = {

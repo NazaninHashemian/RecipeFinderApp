@@ -1,7 +1,7 @@
 // src/components/Cuisine.jsx
 import { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
-import SearchBar from './SearchBar';
+import RecipeCard from './RecipeCard/RecipeCard';
+import SearchBar from './SearchBar/SearchBar';
 import fetchCuisines from '../utils/cuisinesApi';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
