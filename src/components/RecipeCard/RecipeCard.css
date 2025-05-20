@@ -24,6 +24,10 @@
   box-sizing: border-box; 
 }
 
+/* .recipe-card h2{
+  font-size: 1.4rem;
+} */
+
 body.dark-mode .recipe-card {
   background: #222; /* Dark mode background */
   color: #fff; /* Ensure text is visible in dark mode */
@@ -38,4 +42,29 @@ body.dark-mode .recipe-card {
 
 .recipe-title {
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .recipe-card h2{
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .recipe-card h2{
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .recipe-card h2{
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .recipe-card h2{
+    font-size: 1.17rem;
+  }
 }
