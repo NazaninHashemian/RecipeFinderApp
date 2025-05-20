@@ -8,7 +8,6 @@ import './RecipeList.css';
 import { fetchRecipesByName } from '../services/recipeService';
 import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
-
 const RecipeList: React.FC = () => {
   const [mealName, setMealName] = useState('soup');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
