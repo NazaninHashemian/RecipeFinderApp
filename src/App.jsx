@@ -34,7 +34,7 @@ function App() {
           <GiCook 
             size={38} 
             color={isDarkMode ? 'white' : '#ff6347'} 
-            style={{ marginRight: 10, marginTop: 8 }} 
+            style={{ marginRight: 10, marginTop: 5 }} 
             className="hide-on-small"
           />
           <NavLink to="/name" className={activeHandling}>
