@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import Recipe from '../../utils/types';
+import './RecipeListDisplay.css';
 
 interface RecipeListDisplayProps {
   recipes: Recipe[];
