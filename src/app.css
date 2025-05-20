@@ -59,7 +59,18 @@ body.dark-mode .nav button:hover {
   background-color: #444;
 }
 
-/* Media query for smaller screens */
+/* In your App.css or relevant CSS file */
+.hide-on-small {
+  display: inline-block; /* show by default */
+}
+
+@media (max-width: 800px) {
+  .hide-on-small {
+    display: none; /* hide on small screens */
+  }
+}
+
+
 @media (max-width: 600px) {
   .nav {
     gap: 1.7%; /* Reduced space between buttons */

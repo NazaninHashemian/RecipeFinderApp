@@ -14,7 +14,7 @@ import Cuisine from './components/Cuisine';
 import Random from './components/Random';
 import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle'; 
 import './App.css';
-
+import { GiCook } from "react-icons/gi";
 const activeHandling = ({ isActive }) => (isActive ? 'active' : ''); // Updated handling for active class
 
 function App() {
@@ -31,6 +31,12 @@ function App() {
     <Router>
       <div className={isDarkMode ? 'dark-mode' : ''}>
         <div className="nav">
+          <GiCook 
+            size={38} 
+            color={isDarkMode ? 'white' : '#ff6347'} 
+            style={{ marginRight: 10, marginTop: 8 }} 
+            className="hide-on-small"
+          />
           <NavLink to="/name" className={activeHandling}>
             <button>Name</button>
           </NavLink>
@@ -54,8 +60,9 @@ function App() {
           <NavLink to="/categories" className={activeHandling}>
             <button>Categories</button>
           </NavLink>
+          
         </div>
-
+        
         <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
 
         <Routes>

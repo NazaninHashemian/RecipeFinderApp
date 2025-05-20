@@ -1,6 +1,5 @@
 // src/components/RecipeList.jsx
 import { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard/RecipeCard';
 import SearchBar from './SearchBar/SearchBar';
 import fetchIngredients from '../utils/ingredientsApi';
 import LoadingIndicator from './LoadingIndicator';
@@ -8,6 +7,7 @@ import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
 import './RecipeList.css';
 import { fetchRecipesByIngredient } from '../services/recipeService';
+import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
 
 const MainIngredient = () => {
@@ -69,7 +69,7 @@ const MainIngredient = () => {
         <ErrorMessage error={error} />
       </div>
       {/* Display recipes */}
-      <div className="recipe-list">
+      {/* <div className="recipe-list">
         {recipes.length > 0 ? (
           recipes.map((recipe) => {
             return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
@@ -77,7 +77,8 @@ const MainIngredient = () => {
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
-      </div>
+      </div> */}
+      <RecipeListDisplay recipes={recipes} />
     </div>
   );
 };

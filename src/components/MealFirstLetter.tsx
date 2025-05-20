@@ -1,11 +1,11 @@
 // src/components/MealFirstLetter.jsx
 import React, { useEffect, useState } from 'react';
-import RecipeCard from './RecipeCard/RecipeCard';
 import SearchBar from './SearchBar/SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import Recipe from '../utils/types';
 import ErrorMessage from './ErrorMessage';
 import { fetchRecipesByFirstLetter } from '../services/recipeService';
+import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
 const MealFirstLetter:React.FC = () => {
   const [mealStart, setMealStart] = useState<string>('a');
@@ -57,22 +57,8 @@ const MealFirstLetter:React.FC = () => {
         <LoadingIndicator isLoading={loading} />
         <ErrorMessage error={error} />
       </div>
-
       {/* Display recipes */}
-      <div className="recipe-list">
-        {recipes.length > 0 ? (
-          recipes.map((recipes) => {
-            return <RecipeCard key={recipes.idMeal} recepie={recipes} />;
-          })
-        ) : (
-          <p style={{ paddingLeft: '10px' }}>No recipes found</p>
-        )}
-        {/* {Object.keys(recipe).length > 0 ? (
-          <RecipeCard key={recipe.idMeal} recepie={recipe} />
-        ) : (
-          <p>No recipe found</p>
-        )} */}
-      </div>
+      <RecipeListDisplay recipes={recipes} />
     </div>
   );
 };

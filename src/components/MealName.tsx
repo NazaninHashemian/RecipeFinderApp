@@ -1,12 +1,12 @@
 // src/components/mealName.jsx
 import React, { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard/RecipeCard';
 import SearchBar from './SearchBar/SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
 import './RecipeList.css';
 import { fetchRecipesByName } from '../services/recipeService';
+import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
 
 const RecipeList: React.FC = () => {
@@ -66,7 +66,7 @@ const RecipeList: React.FC = () => {
         <ErrorMessage error={error} />
       </div>
       {/* Display recipes */}
-      <div className="recipe-list">
+      {/* <div className="recipe-list">
         {recipes.length > 0 ? (
           recipes.map((recipes) => {
             return <RecipeCard key={recipes.idMeal} recepie={recipes} />;
@@ -74,12 +74,8 @@ const RecipeList: React.FC = () => {
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
-        {/* {Object.keys(recipe).length > 0 ? (
-          <RecipeCard key={recipe.idMeal} recipe={recipe} />
-        ) : (
-          <p>No recipe found</p>
-        )} */}
-      </div>
+      </div> */}
+      <RecipeListDisplay recipes={recipes} />
     </div>
   );
 };
