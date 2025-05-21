@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   NavLink,
+  Navigate,
 } from 'react-router-dom';
 import { useState } from 'react';
 import MainIngredient from './components/MainIngredient';
@@ -14,7 +15,7 @@ import Cuisine from './components/Cuisine';
 import Random from './components/Random';
 import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle'; 
 import './App.css';
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -38,7 +39,7 @@ function App() {
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="/random" element={<Random />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="*" element={<MealName />} />
+          <Route path="*" element={<Navigate to='/name' replace/>} />
         </Routes>
       </div>
     </Router>
