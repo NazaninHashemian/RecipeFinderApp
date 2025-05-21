@@ -24,9 +24,9 @@
   box-sizing: border-box; 
 }
 
-/* .recipe-card h2{
+.recipe-card h2{
   font-size: 1.4rem;
-} */
+}
 
 body.dark-mode .recipe-card {
   background: #222; /* Dark mode background */
@@ -46,13 +46,13 @@ body.dark-mode .recipe-card {
 
 @media (max-width: 1200px) {
   .recipe-card h2{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 1000px) {
   .recipe-card h2{
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 
