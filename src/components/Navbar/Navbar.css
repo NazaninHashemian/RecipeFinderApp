@@ -1,0 +1,78 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.8%;
+  }
+  
+  .nav button {
+    padding: 15% 0.3%;
+    width: 6rem;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .nav button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Light mode active button */
+  .nav .active button {
+    background-color: #007bff;  /* Active button color in light mode */
+    color: white;
+  }
+
+  /* Dark mode styles for nav */
+  body.dark-mode .nav .active button {
+    background-color: #1e2a8a;  /* Darker blue for active button in dark mode */
+    color: #fff;
+  }
+
+  body.dark-mode .nav button {
+    background-color: #111;
+    color: white;
+  }
+  
+  body.dark-mode .nav button:hover {
+    background-color: #444;
+  }
+
+
+  @media (max-width: 600px) {
+    .nav {
+      gap: 1.7%; /* Reduced space between buttons */
+    }
+  
+    .nav button {
+      padding: 12% 0.1%; /* Smaller horizontal padding */
+      font-size: 0.8em; /* Smaller font size */
+      width: 4.8rem;
+    }
+  }
+
+  /* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+    .nav {
+      gap: 0.5%; /* Even smaller space between buttons */
+    }
+  
+    .nav button {
+      padding: 8% 0; /* Further reduce horizontal padding */
+      font-size: 0.7em; /* Smaller font size */
+      width: 3.6rem;
+    }
+  }
+  
+  /* Optional: Media query for very small screens below 320px (if needed) */
+  @media (max-width: 340px) {
+    .nav {
+      gap: 0; /* no space between buttons */
+    }
+  
+    .nav button {
+      padding: 5% 0; /* Even smaller horizontal padding */
+      font-size: 0.2em; /* Even smaller font size */
+      width: 3rem;
+    }
+  }

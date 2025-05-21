@@ -1,6 +1,7 @@
 import React from 'react';
 import { GiCook } from "react-icons/gi";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import './Navbar.css';
 
 interface NavbarProps {
     isDarkMode: boolean;
