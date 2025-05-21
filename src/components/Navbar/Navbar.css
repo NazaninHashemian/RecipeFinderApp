@@ -11,16 +11,18 @@
     cursor: pointer;
     border: none;
     background: none;
+    border-radius: 15px;
   }
   
   .nav button:hover {
-    background-color: #f0f0f0;
+    background-color: #d0d0d0;
   }
   
   /* Light mode active button */
   .nav .active button {
     background-color: #007bff;  /* Active button color in light mode */
     color: white;
+   
   }
 
   /* Dark mode styles for nav */
