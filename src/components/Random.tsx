@@ -46,7 +46,7 @@ const RandomRecipe = () => {
   return (
     <div>
       <h1 id="main-heading"> Random Recipe </h1>
-      <button onClick={handleRefresh} className="refresh-btn">
+      <button onClick={handleRefresh} className="refresh-btn" aria-label="Fetch new random recipe">
         New Recipe
       </button>
       <div className="load-error">
