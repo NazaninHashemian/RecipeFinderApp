@@ -21,7 +21,10 @@
   color: #000;
   width: 100%;  /* Take full width on smaller screens */
   max-width: 250px; /* Limits the max size */
+  box-shadow: 2px 0 8px #bbb;
   box-sizing: border-box; 
+  height: 380px; 
+  overflow-y: auto; /* Enables vertical scrolling if needed */
 }
 
 .recipe-card h2{
@@ -37,6 +40,7 @@ body.dark-mode .recipe-card {
   max-width: 200px;
   width: 96%;
   height: auto;
+  max-height: 190px; /*  Prevent image from taking too much space */
   cursor: pointer; 
   border-radius: 8px;
 }
