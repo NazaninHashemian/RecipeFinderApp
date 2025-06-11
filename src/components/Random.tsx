@@ -5,7 +5,6 @@ import Recipe from '../utils/types';
 import './RecipeList.css';
 import { fetchRecipesRandomly } from '../services/recipeService';
 
-
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState<Recipe[]>([]);
   const [refresh, setRefresh] = useState(true);
