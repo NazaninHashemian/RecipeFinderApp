@@ -5,7 +5,12 @@ import Recipe from '../utils/types';
 import './RecipeList.css';
 import { fetchRecipesRandomly } from '../services/recipeService';
 
-const RandomRecipe = () => {
+interface Props {
+  likedIds: string[];
+  toggleLike: (id: string) => void;
+}
+
+const RandomRecipe = ({ likedIds, toggleLike }: Props) => {
   const [recipe, setRecipe] = useState<Recipe[]>([]);
   const [refresh, setRefresh] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -58,7 +63,7 @@ const RandomRecipe = () => {
       <div className="recipe-list">
         {recipe.length > 0 ? (
           recipe.map((recipe) => {
-            return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+            return <RecipeCard key={recipe.idMeal} recepie={recipe} isLiked={likedIds.includes(recipe.idMeal)} onToggleLike={toggleLike}/>;
           })
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipe found</p>

@@ -10,6 +10,13 @@ import AppRoutes from './components/AppRoutes/AppRoutes';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [likedIds, setLikedIds] = useState<string[]>([]);
+
+  const toggleLike = (id: string) => {
+    setLikedIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   // Function to toggle dark/light mode
   const toggleDarkMode = () => {
@@ -23,7 +30,7 @@ function App() {
       <div className={isDarkMode ? 'dark-mode' : ''}>
         <Navbar isDarkMode={isDarkMode}/>
         <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
-        <AppRoutes/>
+        <AppRoutes likedIds={likedIds} toggleLike={toggleLike}/>
       </div>
     </Router>
   );

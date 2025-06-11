@@ -8,7 +8,12 @@ import ErrorMessage from './ErrorMessage';
 import Recipe from '../utils/types';
 import { fetchRecipesByCuisine } from '../services/recipeService';
 
-const Cuisine:React.FC = () => {
+interface Props {
+  likedIds: string[];
+  toggleLike: (id: string) => void;
+}
+
+const Cuisine = ({ likedIds, toggleLike }: Props) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [cuisine, setCuisine] = useState('Canadian');
   const [loading, setLoading] = useState(false);
@@ -70,7 +75,8 @@ const Cuisine:React.FC = () => {
       <div className="recipe-list">
         {recipes.length > 0 ? (
           recipes.map((recipe) => {
-            return <RecipeCard key={recipe.idMeal} recepie={recipe} />;
+            return <RecipeCard key={recipe.idMeal} recepie={recipe} isLiked={likedIds.includes(recipe.idMeal)}
+            onToggleLike={toggleLike}/>;
           })
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
