@@ -6,12 +6,15 @@ import Modal from '../Modal/Modal';
 import Recipe from '../../utils/types';
 import { BASE_URL } from '../../utils/apiConfig';
 import './RecipeCard.css';
+import Like from '../Like/Like';
 
 type RecipeCardProps = {
-  recepie: Recipe | null; // Ensure recepie is a valid Recipe object or null
+  recepie: Recipe | null; 
+  isLiked: boolean;
+  onToggleLike: (id: string) => void;
 };
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ recepie }) => {
+const RecipeCard: React.FC<RecipeCardProps> = ({ recepie, isLiked, onToggleLike}) => {
   // const [loading, setLoading] = useState<boolean >(false);
   // const [error, setError] = useState<string | null>(null);
   const [detail, setDetail] = useState<Recipe | null>(null);
@@ -101,7 +104,13 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recepie }) => {
                   : 'category not available'}
               </p>
             </div>           
-            
+             
+            <Like 
+              onClick={() => {
+                if(idMeal) onToggleLike(idMeal);
+                }}
+              liked={isLiked}
+            />
           </div>
         </div>
       </div>
