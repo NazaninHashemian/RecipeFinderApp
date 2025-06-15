@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import Recipe from '../../utils/types';
 import './RecipeListDisplay.css';
 
 interface RecipeListDisplayProps {
   recipes: Recipe[];
+  likedIds: string[];
+  toggleLike: (id: string) => void;
 }
 
-const RecipeListDisplay: React.FC<RecipeListDisplayProps> = ({ recipes }) => {
-  const [likedIds, setLikedIds] = useState<string[]>([]);
+const RecipeListDisplay: React.FC<RecipeListDisplayProps> = ({ recipes, likedIds, toggleLike }) => {
+  // const [likedIds, setLikedIds] = useState<string[]>([]);
 
-  const toggleLike = (id: string) => {
-    setLikedIds(prev =>
-      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
-    );
-  };
+  // const toggleLike = (id: string) => {
+  //   setLikedIds(prev =>
+  //     prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+  //   );
+  // };
 
   return (
     <div className="recipe-list">

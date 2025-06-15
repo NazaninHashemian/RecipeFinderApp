@@ -8,7 +8,13 @@ import './RecipeList.css';
 import { fetchRecipesByName } from '../services/recipeService';
 import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
-const RecipeList: React.FC = () => {
+interface RecipeListProps {
+  likedIds: string[];
+  toggleLike: (id: string) => void;
+}
+
+
+const RecipeList = ({ likedIds, toggleLike }: RecipeListProps) => {
   const [mealName, setMealName] = useState('soup');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(false);
@@ -74,7 +80,7 @@ const RecipeList: React.FC = () => {
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
       </div> */}
-      <RecipeListDisplay recipes={recipes} />
+      <RecipeListDisplay recipes={recipes} likedIds={likedIds} toggleLike={toggleLike}/>
     </div>
   );
 };

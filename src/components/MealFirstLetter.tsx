@@ -7,7 +7,12 @@ import ErrorMessage from './ErrorMessage';
 import { fetchRecipesByFirstLetter } from '../services/recipeService';
 import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
-const MealFirstLetter:React.FC = () => {
+interface RecipeListProps {
+  likedIds: string[];
+  toggleLike: (id: string) => void;
+}
+
+const MealFirstLetter = ({ likedIds, toggleLike }: RecipeListProps) => {
   const [mealStart, setMealStart] = useState<string>('a');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -58,7 +63,7 @@ const MealFirstLetter:React.FC = () => {
         <ErrorMessage error={error} />
       </div>
       {/* Display recipes */}
-      <RecipeListDisplay recipes={recipes} />
+      <RecipeListDisplay recipes={recipes} likedIds={likedIds} toggleLike={toggleLike}/>
     </div>
   );
 };
