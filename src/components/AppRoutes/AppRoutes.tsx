@@ -17,7 +17,7 @@ const AppRoutes = ({likedIds, toggleLike}: AppRoutesProps) => {
     <Routes>
         <Route path="/name" element={<MealName likedIds={likedIds} toggleLike={toggleLike}/>} />
         <Route path="/first-letter" element={<MealFirstLetter likedIds={likedIds} toggleLike={toggleLike} />} />
-        <Route path="/ingredient" element={<MainIngredient />} />
+        <Route path="/ingredient" element={<MainIngredient  likedIds={likedIds} toggleLike={toggleLike} />} />
         <Route path="/cuisine" element={<Cuisine likedIds={likedIds} toggleLike ={toggleLike}/>} />
         <Route path="/random" element={<Random likedIds={likedIds} toggleLike={toggleLike} />} />
         <Route path="/categories" element={<Categories />} />

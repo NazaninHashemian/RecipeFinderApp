@@ -9,8 +9,12 @@ import './RecipeList.css';
 import { fetchRecipesByIngredient } from '../services/recipeService';
 import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
+interface RecipeListProps {
+  likedIds: string[];
+  toggleLike: (id: string) => void;
+}
 
-const MainIngredient = () => {
+const MainIngredient = ({ likedIds, toggleLike }: RecipeListProps) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [ingredient, setIngredient] = useState('chicken_breast');
   const [loading, setLoading] = useState(false);
@@ -78,7 +82,11 @@ const MainIngredient = () => {
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
         )}
       </div> */}
-      <RecipeListDisplay recipes={recipes} />
+      <RecipeListDisplay 
+        recipes={recipes}   
+        likedIds={likedIds}
+        toggleLike={toggleLike}
+        />
     </div>
   );
 };

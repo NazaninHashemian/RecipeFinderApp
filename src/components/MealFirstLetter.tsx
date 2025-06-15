@@ -1,5 +1,5 @@
 // src/components/MealFirstLetter.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import LoadingIndicator from './LoadingIndicator';
 import Recipe from '../utils/types';
