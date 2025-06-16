@@ -6,17 +6,11 @@ import './RecipeListDisplay.css';
 interface RecipeListDisplayProps {
   recipes: Recipe[];
   likedIds: string[];
-  toggleLike: (id: string) => void;
+  toggleLike: (recipe: Recipe) => void;
 }
 
 const RecipeListDisplay: React.FC<RecipeListDisplayProps> = ({ recipes, likedIds, toggleLike }) => {
-  // const [likedIds, setLikedIds] = useState<string[]>([]);
 
-  // const toggleLike = (id: string) => {
-  //   setLikedIds(prev =>
-  //     prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
-  //   );
-  // };
 
   return (
     <div className="recipe-list">
@@ -26,7 +20,7 @@ const RecipeListDisplay: React.FC<RecipeListDisplayProps> = ({ recipes, likedIds
             key={recipe.idMeal}
             recepie={recipe}
             isLiked={likedIds.includes(recipe.idMeal)}
-            onToggleLike={toggleLike}
+            onToggleLike={() =>toggleLike(recipe)}
           />
         ))
       ) : (

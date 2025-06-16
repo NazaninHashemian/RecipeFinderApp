@@ -15,4 +15,4 @@ const Like: React.FC<Props> = ({ onClick, liked }) => {
   );
 };
 
-export default Like;  // <-- Make sure to export it!
+export default Like;  

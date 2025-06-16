@@ -7,7 +7,7 @@ import { fetchRecipesRandomly } from '../services/recipeService';
 
 interface Props {
   likedIds: string[];
-  toggleLike: (id: string) => void;
+  toggleLike: (recipe: Recipe) => void;
 }
 
 const RandomRecipe = ({ likedIds, toggleLike }: Props) => {
@@ -63,7 +63,14 @@ const RandomRecipe = ({ likedIds, toggleLike }: Props) => {
       <div className="recipe-list">
         {recipe.length > 0 ? (
           recipe.map((recipe) => {
-            return <RecipeCard key={recipe.idMeal} recepie={recipe} isLiked={likedIds.includes(recipe.idMeal)} onToggleLike={toggleLike}/>;
+            return(
+              <RecipeCard 
+                key={recipe.idMeal} 
+                recepie={recipe} 
+                isLiked={likedIds.includes(recipe.idMeal)} 
+                onToggleLike={() =>toggleLike(recipe)}
+              />
+            );
           })
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipe found</p>

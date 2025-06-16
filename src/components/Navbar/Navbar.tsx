@@ -44,6 +44,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode }) => {
           <button>Categories</button>
         </NavLink>
         
+        <NavLink to="/favorites" className={activeHandling}>
+        <button>Favorites ❤️</button>
+      </NavLink>
       </div>
     )
 }

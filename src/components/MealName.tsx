@@ -10,9 +10,8 @@ import RecipeListDisplay from './RecipeListDisplay/RecipeListDisplay';
 
 interface RecipeListProps {
   likedIds: string[];
-  toggleLike: (id: string) => void;
+  toggleLike: (recipe: Recipe) => void;
 }
-
 
 const RecipeList = ({ likedIds, toggleLike }: RecipeListProps) => {
   const [mealName, setMealName] = useState('soup');

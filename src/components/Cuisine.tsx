@@ -10,7 +10,7 @@ import { fetchRecipesByCuisine } from '../services/recipeService';
 
 interface Props {
   likedIds: string[];
-  toggleLike: (id: string) => void;
+  toggleLike: (recipe: Recipe) => void;
 }
 
 const Cuisine = ({ likedIds, toggleLike }: Props) => {
@@ -76,7 +76,7 @@ const Cuisine = ({ likedIds, toggleLike }: Props) => {
         {recipes.length > 0 ? (
           recipes.map((recipe) => {
             return <RecipeCard key={recipe.idMeal} recepie={recipe} isLiked={likedIds.includes(recipe.idMeal)}
-            onToggleLike={toggleLike}/>;
+            onToggleLike={() =>toggleLike(recipe)}/>;
           })
         ) : (
           <p style={{ paddingLeft: '10px' }}>No recipes found</p>
