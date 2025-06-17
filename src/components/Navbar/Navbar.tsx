@@ -2,6 +2,7 @@ import React from 'react';
 import { GiCook } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
+import { IoIosHeart } from 'react-icons/io';
 
 interface NavbarProps {
     isDarkMode: boolean;
@@ -43,10 +44,14 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode }) => {
         <NavLink to="/categories" className={activeHandling}>
           <button>Categories</button>
         </NavLink>
-        
-        <NavLink to="/favorites" className={activeHandling}>
-        <button>Favorites ❤️</button>
+
+      <NavLink to="/favorites" className={activeHandling}>
+        <button>
+          <IoIosHeart color={isDarkMode ? '#fff' : '#ff6b81'} size={20} />
+          <span className="favorite-button-text"> Favorite</span>
+        </button>
       </NavLink>
+
       </div>
     )
 }

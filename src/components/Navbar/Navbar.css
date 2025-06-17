@@ -53,6 +53,17 @@
     }
   }
 
+  .favorite-button-text {
+    display: inline;
+  }
+  
+  @media (max-width: 600px) {
+    .favorite-button-text {
+      display: none;
+    }
+  }
+  
+
   /* Media query for screens smaller than 480px */
 @media (max-width: 480px) {
     .nav {
