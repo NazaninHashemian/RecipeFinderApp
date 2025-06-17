@@ -41,46 +41,80 @@
   }
 
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     .nav {
       gap: 1.7%; /* Reduced space between buttons */
     }
   
     .nav button {
       padding: 12% 0.1%; /* Smaller horizontal padding */
-      font-size: 0.8em; /* Smaller font size */
-      width: 4.8rem;
+      font-size: 0.85em; /* Smaller font size */
+      width: 4.6rem;
     }
   }
 
   .favorite-button-text {
     display: inline;
-    /* vertical-align: middle;
-    line-height: 1; */
     position: relative;
     top: -3px;
   }
   
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     .favorite-button-text {
       display: none;
     }
   }
 
-
-  /* Media query for screens smaller than 480px */
-@media (max-width: 480px) {
+  @media (max-width: 600px) {
     .nav {
-      gap: 0.5%; /* Even smaller space between buttons */
+      gap: .1%; 
     }
   
     .nav button {
-      padding: 8% 0; /* Further reduce horizontal padding */
-      font-size: 0.7em; /* Smaller font size */
-      width: 3.6rem;
+      padding: 10% 0.09%; 
+      font-size: 0.8em;
+      width: 4.6rem;
+    }
+  }
+
+  /* @media (max-width: 600px) {
+    .nav button svg {
+      width: 14px;
+      height: 14px;
+    }
+  } */
+
+  @media (max-width: 520px) {
+    .nav {
+      gap: .09%;
+    }
+  
+    .nav button {
+      font-size: 0.73em; 
+      width: 4.2rem;
+    }
+  }
+
+  @media (max-width: 472px) {
+    .nav {
+      gap: .07%;
+    }  
+    .nav button {
+      font-size: 0.69em;
+      width: 3.8rem;
     }
   }
   
+  @media (max-width: 430px) {
+    .nav {
+      gap: .06%;
+    }  
+    .nav button {
+      font-size: 0.6em; 
+      width: 3.2rem;
+    }
+  }
+
   /* Optional: Media query for very small screens below 320px (if needed) */
   @media (max-width: 340px) {
     .nav {
@@ -88,8 +122,27 @@
     }
   
     .nav button {
-      padding: 5% 0; /* Even smaller horizontal padding */
       font-size: 0.2em; /* Even smaller font size */
-      width: 3rem;
+      width: 2.85rem;
+    }
+  }
+
+  @media (max-width: 326px) { 
+
+    .nav button {
+      width: 2.8rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .nav button svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @media (max-width: 315px) { 
+    .nav button {
+      width: 2.7rem;
     }
   }
