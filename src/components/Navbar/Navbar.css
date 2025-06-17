@@ -55,14 +55,18 @@
 
   .favorite-button-text {
     display: inline;
+    /* vertical-align: middle;
+    line-height: 1; */
+    position: relative;
+    top: -3px;
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .favorite-button-text {
       display: none;
     }
   }
-  
+
 
   /* Media query for screens smaller than 480px */
 @media (max-width: 480px) {

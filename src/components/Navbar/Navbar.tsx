@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode }) => {
 
       <NavLink to="/favorites" className={activeHandling}>
         <button>
-          <IoIosHeart color={isDarkMode ? '#fff' : '#ff6b81'} size={20} />
+          <IoIosHeart color={isDarkMode ? '#fff' : '#ff6b81'} size={17} />
           <span className="favorite-button-text"> Favorite</span>
         </button>
       </NavLink>
