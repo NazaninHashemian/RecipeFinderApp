@@ -7,7 +7,7 @@
 .mode-label{
   position: fixed;
   right: 88px;
-  top:60px;
+  top: 70px;
   font-size: .78em;
 }
 
@@ -22,7 +22,7 @@
   padding: 3px;
   transition: background 0.3s ease;
   position: fixed;
-  top: 57px;
+  top: 67px;
   right: 25px;
   justify-content: space-between; /* Space between the slider and label */  
 }
