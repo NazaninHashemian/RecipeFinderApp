@@ -2,6 +2,7 @@
 A responsive, modern web application for discovering delicious recipes using TheMealDB API. Users can search recipes by dish name, ingredient, first letter, or cuisine (e.g., Canadian). There's also a surprise feature to fetch a random recipe. Designed with a mobile-first approach, this app offers a polished, accessible, and enjoyable cooking discovery experience.
 
 🔗 Live Demo – Try the Recipe Finder App
+https://nazaninhashemian.github.io/name
 ✨ Features
 🔍 Multi-Mode Search:
 
