@@ -3,6 +3,7 @@ A responsive, modern web application for discovering delicious recipes using The
 
 🔗 Live Demo – Try the Recipe Finder App
 https://nazaninhashemian.github.io/name
+
 ✨ Features
 🔍 Multi-Mode Search:
 
